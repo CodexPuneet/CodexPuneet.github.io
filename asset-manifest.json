@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b79bfe87.css",
-    "main.js": "/static/js/main.1564eb59.js",
+    "main.js": "/static/js/main.554a52c6.js",
     "static/media/image.jpg": "/static/media/image.214633ab5808123e011e.jpg",
     "static/media/Hubspot.png": "/static/media/Hubspot.cee2b8467426760901d7.png",
     "static/media/Nordstrom.png": "/static/media/Nordstrom.9bb57841ce868a246f32.png",
@@ -23,10 +23,10 @@
     "static/media/javascript.png": "/static/media/javascript.1ccd6ef9bb1f9c84ef00.png",
     "index.html": "/index.html",
     "main.b79bfe87.css.map": "/static/css/main.b79bfe87.css.map",
-    "main.1564eb59.js.map": "/static/js/main.1564eb59.js.map"
+    "main.554a52c6.js.map": "/static/js/main.554a52c6.js.map"
   },
   "entrypoints": [
     "static/css/main.b79bfe87.css",
-    "static/js/main.1564eb59.js"
+    "static/js/main.554a52c6.js"
   ]
 }
