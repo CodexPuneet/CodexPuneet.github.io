@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c7b5b441.css",
-    "main.js": "/static/js/main.2edc393d.js",
+    "main.js": "/static/js/main.c5b3fd51.js",
     "static/media/image.jpg": "/static/media/image.214633ab5808123e011e.jpg",
     "static/media/JioMart.png": "/static/media/JioMart.dc925691941206beaa9a.png",
     "static/media/ShopQ.png": "/static/media/ShopQ.5a25b27f1a077125d570.png",
@@ -25,10 +25,10 @@
     "static/media/javascript.png": "/static/media/javascript.1ccd6ef9bb1f9c84ef00.png",
     "index.html": "/index.html",
     "main.c7b5b441.css.map": "/static/css/main.c7b5b441.css.map",
-    "main.2edc393d.js.map": "/static/js/main.2edc393d.js.map"
+    "main.c5b3fd51.js.map": "/static/js/main.c5b3fd51.js.map"
   },
   "entrypoints": [
     "static/css/main.c7b5b441.css",
-    "static/js/main.2edc393d.js"
+    "static/js/main.c5b3fd51.js"
   ]
 }
