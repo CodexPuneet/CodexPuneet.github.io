@@ -1,11 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.c7b5b441.css",
-    "main.js": "/static/js/main.c5b3fd51.js",
+    "main.css": "/static/css/main.c9738e53.css",
+    "main.js": "/static/js/main.dbed8c77.js",
     "static/media/image.jpg": "/static/media/image.214633ab5808123e011e.jpg",
     "static/media/JioMart.png": "/static/media/JioMart.dc925691941206beaa9a.png",
     "static/media/ShopQ.png": "/static/media/ShopQ.5a25b27f1a077125d570.png",
-    "static/media/Hubspot.png": "/static/media/Hubspot.cee2b8467426760901d7.png",
     "static/media/Nordstrom.png": "/static/media/Nordstrom.9bb57841ce868a246f32.png",
     "static/media/Mentimeter.png": "/static/media/Mentimeter.97627a47ab78de935141.png",
     "static/media/wave.gif": "/static/media/wave.de53358cc619c6272683.gif",
@@ -24,11 +23,11 @@
     "static/media/chakra.png": "/static/media/chakra.36db97903e01c1040ed5.png",
     "static/media/javascript.png": "/static/media/javascript.1ccd6ef9bb1f9c84ef00.png",
     "index.html": "/index.html",
-    "main.c7b5b441.css.map": "/static/css/main.c7b5b441.css.map",
-    "main.c5b3fd51.js.map": "/static/js/main.c5b3fd51.js.map"
+    "main.c9738e53.css.map": "/static/css/main.c9738e53.css.map",
+    "main.dbed8c77.js.map": "/static/js/main.dbed8c77.js.map"
   },
   "entrypoints": [
-    "static/css/main.c7b5b441.css",
-    "static/js/main.c5b3fd51.js"
+    "static/css/main.c9738e53.css",
+    "static/js/main.dbed8c77.js"
   ]
 }
