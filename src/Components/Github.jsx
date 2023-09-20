@@ -1,4 +1,4 @@
-import { Box, Center, Flex, Grid, Heading, Img } from "@chakra-ui/react";
+import { Box, Center, Grid, Heading, Img } from "@chakra-ui/react";
 import React from "react";
 import GitHubCalendar from 'react-github-calendar';
 

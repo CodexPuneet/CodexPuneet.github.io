@@ -1,4 +1,4 @@
-import {   Box,  Menu,  MenuButton,  MenuList , Text, useDisclosure, MenuItem } from '@chakra-ui/react'
+import {   Box,  Menu,  MenuButton,  MenuList , MenuItem } from '@chakra-ui/react'
 import React from 'react'
 import { FaBars } from 'react-icons/fa';
 import {Link} from 'react-scroll'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Center, Flex, Heading, Text, } from '@chakra-ui/react'
+import { Box, Center, Heading, Text, } from '@chakra-ui/react'
 import paymonk from '../Images/paymonk.png'
 import Hypo from '../Images/Hypo.png'
 
