@@ -26,7 +26,7 @@ const Home = () => {
   };
   const style={
     "bgGradient": 'linear(to-r, green.200, pink.500)'
-    // 
+   
   }
   
  React.useEffect(() => {

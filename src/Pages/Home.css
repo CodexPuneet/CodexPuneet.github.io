@@ -1,8 +1,8 @@
 
 .profile{
-          width: 300px; 
+          width: 335px; 
            height:400px;
-           box-shadow: 5px 10px #ac7b7b;
+           box-shadow: 5px 10px #b6b2a9;
            border-image-slice: 20%;
             order: 1;
              animation: profile__animate 9s ease-in-out infinite 1s;
@@ -31,7 +31,8 @@
 }
 
 #grad{
-  background-image: linear-gradient(to right, rgb(221, 45, 45),rgb(197, 137, 26),rgb(244, 244, 5),rgb(221, 45, 45),rgb(197, 137, 26),rgb(244, 244, 5));
+    /* background-image: linear-gradient(to right, rgb(221, 45, 45),rgb(197, 137, 26),rgb(244, 244, 5),rgb(221, 45, 45),rgb(197, 137, 26),rgb(244, 244, 5)); */
+    background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(169, 169, 169));
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
