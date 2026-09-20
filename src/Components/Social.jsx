@@ -40,9 +40,9 @@ const Social = () => {
           Resume <BsFillPersonLinesFill size={22} />
         </>
       ),
-      href: "./Puneet_Srivastava_Resume.pdf",
+      href: "./Puneet_Srivastava_Resume.docx",
       style: "rounded-br-xl",
-      download: true,
+      download: "Puneet_Srivastava_Resume.docx",
     },
   ];
 

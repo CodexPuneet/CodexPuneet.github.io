@@ -122,19 +122,16 @@ const Home = () => {
           <Flex wrap="wrap" gap={4} mt={6} alignItems="center">
             <Button
               as="a"
-              href="./Puneet_Srivastava_Resume.pdf"
-              download
+              href="./Puneet_Srivastava_Resume.docx"
+              download="Puneet_Srivastava_Resume.docx"
               leftIcon={<DownloadIcon />}
               className="downloadbtn"
               size="lg"
               borderRadius="xl"
               px={6}
               fontSize="15px"
-              onClick={() => {
-                window.open('https://drive.google.com/file/d/10jdfxVfRRfSMSsD4bQO0p9niSSbcfxcn/view', '_blank', 'noopener,noreferrer');
-              }}
             >
-              Download Resume
+              Download Resume (.docx)
             </Button>
 
             <Link activeClass="active" smooth spy offset={-70} to="experience">

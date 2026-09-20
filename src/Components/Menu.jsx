@@ -70,11 +70,8 @@ function Menus() {
 
         <MenuItem
           as="a"
-          href="./Puneet_Srivastava_Resume.pdf"
-          download
-          onClick={() => {
-            window.open('https://drive.google.com/file/d/10jdfxVfRRfSMSsD4bQO0p9niSSbcfxcn/view', '_blank', 'noopener,noreferrer');
-          }}
+          href="./Puneet_Srivastava_Resume.docx"
+          download="Puneet_Srivastava_Resume.docx"
           borderRadius="md"
           px={4}
           py={2.5}
@@ -88,7 +85,7 @@ function Menus() {
             color: 'white',
           }}
         >
-          Download Resume
+          Download Resume (.docx)
         </MenuItem>
       </MenuList>
     </Menu>

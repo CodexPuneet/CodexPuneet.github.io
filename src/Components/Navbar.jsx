@@ -97,6 +97,9 @@ const NavBar = () => {
 
             {/* Resume Button */}
             <Button
+              as="a"
+              href="./Puneet_Srivastava_Resume.docx"
+              download="Puneet_Srivastava_Resume.docx"
               size="sm"
               ml={3}
               borderRadius="full"
@@ -104,11 +107,8 @@ const NavBar = () => {
               fontWeight={600}
               className="downloadbtn"
               px={4}
-              onClick={() => {
-                window.open('https://drive.google.com/file/d/10jdfxVfRRfSMSsD4bQO0p9niSSbcfxcn/view', '_blank', 'noopener,noreferrer');
-              }}
             >
-              Resume
+              Resume (.docx)
             </Button>
           </HStack>
 
