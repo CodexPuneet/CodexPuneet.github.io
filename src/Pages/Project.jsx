@@ -1,10 +1,13 @@
-import { Box, Button, Flex, Grid, Heading, Img, Link, Text,} from '@chakra-ui/react'
+import { Box, Button, Flex, Grid, Heading, Img, Link, Text, HStack } from '@chakra-ui/react'
 import React from 'react'
 import { LinkIcon } from '@chakra-ui/icons'
+import { motion } from 'framer-motion'
 import Nordstrom from "../Images/Nordstrom.png";
 import Mentimeter from "../Images/Mentimeter.png";
 import ShopQ from "../Images/ShopQ.png";
 import Jio from "../Images/JioMart.png";
+
+const MotionBox = motion(Box);
 
 
 const Project = () => {
@@ -193,12 +196,16 @@ const Project = () => {
       </Box>
 
       <Grid templateColumns={{ base: '1fr', lg: 'repeat(2, 1fr)' }} gap={6} mb={20}>
-        {caseStudies.map((cs) => (
-          <Box
+        {caseStudies.map((cs, idx) => (
+          <MotionBox
             key={cs.id}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: idx * 0.15 }}
             p={{ base: 6, md: 8 }}
             borderRadius="2xl"
-            className="glass-card"
+            className="glass-card qa-card-animated"
             border="1px solid"
             borderColor="rgba(243, 14, 79, 0.3)"
             position="relative"
@@ -206,32 +213,69 @@ const Project = () => {
             flexDirection="column"
             justifyContent="space-between"
           >
+            {/* Animated QA Scanner Laser Beam */}
+            <Box className="qa-scan-line" />
+
             <Box>
-              <Flex justify="space-between" align="center" mb={3}>
-                <Text fontSize="36px">{cs.icon}</Text>
-                <span className="badge-accent px-3 py-1 rounded-full text-xs font-bold">
+              {/* Header Telemetry Row */}
+              <Flex justify="space-between" align="center" mb={4}>
+                <Flex align="center" gap={3}>
+                  <Text fontSize="34px">{cs.icon}</Text>
+                  <HStack spacing={2} px={2.5} py={1} borderRadius="full" bg="rgba(16, 185, 129, 0.1)" border="1px solid rgba(16, 185, 129, 0.3)">
+                    <span className="qa-radar-pulse" />
+                    <Text fontSize="11px" fontWeight={700} color="#10b981" letterSpacing="wider">
+                      ACTIVE IN PROD
+                    </Text>
+                  </HStack>
+                </Flex>
+
+                <span className="qa-metric-badge px-3 py-1 rounded-full text-xs font-bold text-white">
                   {cs.metric}
                 </span>
               </Flex>
+
               <Heading fontSize={{ base: '19px', md: '21px' }} color="cyan.400" mb={3} fontWeight={700}>
                 {cs.title}
               </Heading>
+
               <Text fontSize={{ base: '14px', md: '15px' }} lineHeight="1.7" color="gray.300" mb={6} textAlign="justify">
                 {cs.about}
               </Text>
             </Box>
 
-            <Flex wrap="wrap" gap={2}>
-              {cs.tags.map((tag, i) => (
-                <span
-                  key={i}
-                  className="badge-cyan px-2.5 py-1 rounded-md text-xs font-semibold"
-                >
-                  {tag}
-                </span>
-              ))}
-            </Flex>
-          </Box>
+            {/* Tags & Validation Checklist */}
+            <Box>
+              <Flex wrap="wrap" gap={2} mb={4}>
+                {cs.tags.map((tag, i) => (
+                  <span
+                    key={i}
+                    className="badge-cyan px-2.5 py-1 rounded-md text-xs font-semibold"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </Flex>
+
+              {/* Automated QA Checklist Pill */}
+              <Flex
+                align="center"
+                justify="space-between"
+                pt={3}
+                borderTop="1px solid"
+                borderColor="rgba(255, 255, 255, 0.08)"
+                fontSize="12px"
+                color="gray.400"
+              >
+                <HStack spacing={1.5}>
+                  <Text color="#10b981">✓</Text>
+                  <Text fontWeight={600}>{idx === 0 ? 'Veeva Vault Audit-Ready' : 'Real-time Defect Prevention'}</Text>
+                </HStack>
+                <Text fontSize="11px" color="cyan.300" fontWeight={600}>
+                  {idx === 0 ? '100% Pass Rate' : 'Automated QC Flow'}
+                </Text>
+              </Flex>
+            </Box>
+          </MotionBox>
         ))}
       </Grid>
 
