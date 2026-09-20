@@ -47,14 +47,12 @@ const NavBar = () => {
           </Box>
 
           {/* Logo / Brand Name */}
-          <Link activeClass="active" smooth spy offset={-80} to="home" style={{ cursor: 'pointer' }}>
+          <Link activeClass="active" smooth spy offset={-80} to="home" style={{ cursor: 'pointer', textDecoration: 'none' }}>
             <Box
               as="span"
-              fontSize={{ base: '18px', md: '22px' }}
+              fontSize={{ base: '20px', md: '23px' }}
               fontWeight={700}
-              className="font-signature"
-              bgGradient="linear(to-r, #f30e4f, #38bdf8)"
-              bgClip="text"
+              className="font-signature nav-brand-logo"
               letterSpacing="tight"
               userSelect="none"
             >

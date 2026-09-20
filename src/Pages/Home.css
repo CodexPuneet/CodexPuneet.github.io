@@ -73,6 +73,34 @@
   display: inline-block;
 }
 
+/* Animated Header Brand Logo */
+.nav-brand-logo {
+  display: inline-block;
+  background: linear-gradient(90deg, #f30e4f 0%, #ff6b8b 25%, #38bdf8 50%, #f30e4f 75%, #ff6b8b 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: logo__shimmer 6s linear infinite;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 2px 8px rgba(243, 14, 79, 0.25));
+}
+
+.nav-brand-logo:hover {
+  animation-duration: 2.5s;
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 14px rgba(56, 189, 248, 0.55));
+}
+
+@keyframes logo__shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+
 /* Classy Glassmorphism Utilities */
 .glass-card {
   background: rgba(255, 255, 255, 0.03);
