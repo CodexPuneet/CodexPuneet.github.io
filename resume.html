@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puneet Srivastava — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f0f2f5;
+      color: #1a1a2e;
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .resume-container {
+      max-width: 860px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+      overflow: hidden;
+    }
+
+    /* ─── Header ─── */
+    .header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      color: #ffffff;
+      padding: 48px 56px 40px;
+      position: relative;
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #e94560, #ff6b6b, #e94560);
+    }
+    .header h1 {
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 6px;
+    }
+    .header .subtitle {
+      font-size: 17px;
+      font-weight: 600;
+      color: #e94560;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+    .header .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+    }
+    .header .contact-row a {
+      color: #64b5f6;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .header .contact-row a:hover { color: #90caf9; }
+    .contact-item { display: flex; align-items: center; gap: 6px; }
+    .contact-icon {
+      width: 16px; height: 16px;
+      opacity: 0.7;
+    }
+
+    /* ─── Body ─── */
+    .body-content {
+      padding: 40px 56px 48px;
+    }
+
+    /* ─── Section Titles ─── */
+    .section-title {
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #0f3460;
+      border-bottom: 2px solid #e94560;
+      padding-bottom: 8px;
+      margin: 36px 0 20px 0;
+    }
+    .section-title:first-child { margin-top: 0; }
+
+    /* ─── Summary ─── */
+    .summary {
+      font-size: 15.5px;
+      color: #333;
+      line-height: 1.75;
+      text-align: justify;
+    }
+
+    /* ─── Skills ─── */
+    .skills-group {
+      margin-bottom: 10px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #444;
+    }
+    .skills-group strong {
+      color: #1a1a2e;
+      font-weight: 700;
+    }
+    .skill-dot {
+      color: #e94560;
+      margin: 0 4px;
+      font-weight: 700;
+    }
+
+    /* ─── Experience ─── */
+    .company-block {
+      margin-top: 24px;
+    }
+    .company-name {
+      font-size: 17px;
+      font-weight: 800;
+      color: #0f3460;
+      line-height: 1.4;
+    }
+    .company-duration {
+      font-size: 14px;
+      font-style: italic;
+      color: #777;
+      margin-bottom: 12px;
+    }
+
+    .role-block {
+      margin-top: 20px;
+      padding-left: 20px;
+      border-left: 3px solid #e9e9e9;
+    }
+    .role-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .role-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+    .role-date {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #e94560;
+      white-space: nowrap;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .role-block ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .role-block li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      font-size: 15px;
+      color: #444;
+      line-height: 1.7;
+    }
+    .role-block li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #e94560;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* ─── Earlier Experience ─── */
+    .earlier-role {
+      margin-bottom: 10px;
+      font-size: 15px;
+      color: #444;
+      line-height: 1.7;
+    }
+    .earlier-role strong {
+      color: #1a1a2e;
+      font-weight: 700;
+    }
+    .earlier-role .date-desc {
+      color: #777;
+    }
+
+    /* ─── Education ─── */
+    .edu-item {
+      margin-bottom: 14px;
+    }
+    .edu-item .edu-title {
+      font-size: 15.5px;
+      font-weight: 700;
+      color: #1a1a2e;
+    }
+    .edu-item .edu-date {
+      font-size: 13.5px;
+      font-family: 'JetBrains Mono', monospace;
+      color: #e94560;
+      font-weight: 500;
+    }
+
+    /* ─── Certifications ─── */
+    .cert-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+    }
+    .cert-list li {
+      background: #f0f2f5;
+      color: #333;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1px solid #e0e0e0;
+    }
+
+    /* ─── Download Bar ─── */
+    .download-bar {
+      background: #f8f9fa;
+      border-top: 1px solid #eee;
+      padding: 20px 56px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+    .download-bar a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 28px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: #e94560;
+      color: #fff;
+    }
+    .btn-primary:hover { background: #d63851; transform: translateY(-1px); }
+    .btn-secondary {
+      background: #fff;
+      color: #0f3460;
+      border: 1.5px solid #0f3460;
+    }
+    .btn-secondary:hover { background: #0f3460; color: #fff; transform: translateY(-1px); }
+
+    /* ─── Print ─── */
+    @media print {
+      body { background: #fff; font-size: 11pt; }
+      .resume-container { margin: 0; border-radius: 0; box-shadow: none; }
+      .header { padding: 32px 40px 28px; }
+      .body-content { padding: 28px 40px 32px; }
+      .download-bar { display: none; }
+      .header h1 { font-size: 26pt; }
+      .section-title { margin: 20px 0 12px 0; }
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 680px) {
+      .resume-container { margin: 0; border-radius: 0; }
+      .header { padding: 32px 24px 28px; }
+      .header h1 { font-size: 28px; }
+      .header .subtitle { font-size: 15px; }
+      .body-content { padding: 28px 24px 36px; }
+      .download-bar { padding: 16px 24px; }
+      .role-header { flex-direction: column; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-container">
+    <!-- ─── HEADER ─── -->
+    <div class="header">
+      <h1>PUNEET SRIVASTAVA</h1>
+      <div class="subtitle">Senior QA Analyst (Functioning as QA Lead) | Cross-Channel Pharma &amp; Diagnostics Digital Media Compliance</div>
+      <div class="contact-row">
+        <span class="contact-item">📍 Noida, Uttar Pradesh, India</span>
+        <span class="contact-item">📞 +91-7007500804</span>
+        <span class="contact-item">✉️ srivastavap714@gmail.com</span>
+        <span class="contact-item"><a href="https://linkedin.com/in/puneetsrivastava7" target="_blank">🔗 LinkedIn</a></span>
+        <span class="contact-item"><a href="https://github.com/CodexPuneet" target="_blank">💻 GitHub</a></span>
+      </div>
+    </div>
+
+    <div class="body-content">
+      <!-- ─── PROFESSIONAL SUMMARY ─── -->
+      <div class="section-title">Professional Summary</div>
+      <p class="summary">
+        Senior QA Analyst with 3+ years leading cross-channel Quality Assurance for regulated pharmaceutical and diagnostics digital media campaigns, functioning as QA Lead since Jul 2025. Progressed from QA Analyst (GSK) to Senior QA (Johnson &amp; Johnson/Janssen) to de facto QA Lead (Roche), leading a team of ~12 QA resources reviewing 430+ digital assets/month with zero escalations and zero external bugs over 12+ consecutive months. Built three QA automation tools (Video QC, Banner QC, Email QC) and a centralized QA tracking hub, cutting manual review time by an estimated 30%+ and expanding team bandwidth. Currently leading the pilot onboarding of the Roche Diagnostics account (CGM digital media), building the compliance QA framework from the ground up. Skilled in Veeva Vault, SFMC, AEM, and regulatory/compliance-driven QA processes.
+      </p>
+
+      <!-- ─── CORE SKILLS ─── -->
+      <div class="section-title">Core Skills</div>
+      <div class="skills-group">
+        <strong>QA Leadership &amp; Strategy:</strong>
+        Cross-Channel QA <span class="skill-dot">·</span> Pharma Regulatory Compliance QA <span class="skill-dot">·</span> Team Leadership <span class="skill-dot">·</span> QA Framework Design <span class="skill-dot">·</span> Process Automation <span class="skill-dot">·</span> Defect Management <span class="skill-dot">·</span> Client &amp; Stakeholder Management
+      </div>
+      <div class="skills-group">
+        <strong>Tools &amp; Platforms:</strong>
+        Veeva Vault <span class="skill-dot">·</span> Salesforce Marketing Cloud (SFMC) <span class="skill-dot">·</span> Adobe Experience Manager (AEM) <span class="skill-dot">·</span> Viseven <span class="skill-dot">·</span> eWizard <span class="skill-dot">·</span> OCE-D <span class="skill-dot">·</span> OCE-P <span class="skill-dot">·</span> Adobe Photoshop <span class="skill-dot">·</span> Jira <span class="skill-dot">·</span> Git/GitHub
+      </div>
+      <div class="skills-group">
+        <strong>Channels Covered:</strong>
+        EDA <span class="skill-dot">·</span> Email <span class="skill-dot">·</span> Banner <span class="skill-dot">·</span> Print <span class="skill-dot">·</span> iPDF <span class="skill-dot">·</span> AEM Websites &amp; Landing Pages <span class="skill-dot">·</span> Programmatic <span class="skill-dot">·</span> Paid Social
+      </div>
+
+      <!-- ─── PROFESSIONAL EXPERIENCE ─── -->
+      <div class="section-title">Professional Experience</div>
+
+      <div class="company-block">
+        <div class="company-name">WPP Production India (formerly Hogarth Studios India, formerly Wunderman Thompson Studios) — Gurugram, India</div>
+        <div class="company-duration">Oct 2023 – Present</div>
+
+        <!-- Role 1 -->
+        <div class="role-block">
+          <div class="role-header">
+            <span class="role-title">Senior QA Analyst (Functioning as QA Lead) — Roche Diagnostics Onboarding (Pilot)</span>
+            <span class="role-date">May 2026 – Present</span>
+          </div>
+          <ul>
+            <li>Leading pilot onboarding of the Roche Diagnostics account, building the end-to-end QA compliance framework for CGM (Continuous Glucose Monitoring) digital media assets from the ground up.</li>
+            <li>Designing a 3-layer QA framework — global standards, channel-specific validation, and delivery/compliance sign-off — covering 7+ digital channels.</li>
+            <li>Established naming convention standards, audio compliance benchmarks (EBU R128), and funnel-stage CTA validation logic for the new account onboarding.</li>
+          </ul>
+        </div>
+
+        <!-- Role 2 -->
+        <div class="role-block">
+          <div class="role-header">
+            <span class="role-title">Senior QA Analyst (Functioning as QA Lead) — Roche Pharma Account</span>
+            <span class="role-date">Jul 2025 – May 2026</span>
+          </div>
+          <ul>
+            <li>Onboarded the Roche pharma account and was entrusted with de facto QA Lead responsibilities to prove readiness for the role; stabilized operations within approximately 3 months, transitioning from pilot to steady-state with zero critical defects.</li>
+            <li>Led a QA team of ~12 resources across 7+ channels (EDA, Email, Banner, Print, iPDF, AEM, Landing Pages), reviewing 430+ digital assets/month, sustaining zero escalations and zero external bugs over 12+ consecutive months.</li>
+            <li>Designed and built three QA automation tools — a Video QC tool, a Banner QC tool, and an Email QC tool — reducing manual review time by an estimated 30%+ and increasing team bandwidth.</li>
+            <li>Built a centralized QA Hub for tracking, reporting, task assignment, and KPI monitoring across the team, improving delivery visibility and predictability for stakeholders.</li>
+          </ul>
+        </div>
+
+        <!-- Role 3 -->
+        <div class="role-block">
+          <div class="role-header">
+            <span class="role-title">Senior QA Analyst — Johnson &amp; Johnson (Janssen) Account</span>
+            <span class="role-date">Jul 2024 – Jul 2025</span>
+          </div>
+          <ul>
+            <li>Promoted to Senior QA after strong performance on the GSK account; owned quality assurance for Johnson &amp; Johnson's (Janssen) cross-channel digital campaigns.</li>
+            <li>Validated omnichannel campaign assets for accuracy, regulatory compliance, and brand consistency across email, banner, and web channels.</li>
+            <li>Partnered with global creative and development teams using Veeva Vault, SFMC, and AEM to identify, document, and resolve defects pre-delivery.</li>
+          </ul>
+        </div>
+
+        <!-- Role 4 -->
+        <div class="role-block">
+          <div class="role-header">
+            <span class="role-title">QA Analyst — GSK Account</span>
+            <span class="role-date">Oct 2023 – Jul 2024</span>
+          </div>
+          <ul>
+            <li>Started career in regulated pharma digital media QA, performing quality assurance across 7+ channels including EDA, Email, Banner, Print, and AEM-hosted assets for GSK.</li>
+            <li>Designed and executed test plans, test cases, and test scenarios; performed manual, unit, and system testing across multiple concurrent projects.</li>
+            <li>Documented QA processes and defect reports, ensuring compliance with client and industry standards ahead of every delivery.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ─── EARLIER EXPERIENCE ─── -->
+      <div class="section-title">Earlier Experience</div>
+      <div class="earlier-role">
+        <strong>Full Stack Developer — Hypothesize, Remote</strong>
+        <span class="date-desc">(Feb 2023 – Apr 2023):</span> Developed end-to-end web applications using React.js, Redux, and TypeScript.
+      </div>
+      <div class="earlier-role">
+        <strong>Frontend Developer — Actas Technology Pvt Ltd (PayMonk), Noida</strong>
+        <span class="date-desc">(Apr 2023 – Sep 2023):</span> Built responsive fintech web interfaces using React, Redux, and ChakraUI.
+      </div>
+      <div class="earlier-role">
+        <strong>Maintenance Engineer — Genone Optech Pvt Ltd, Greater Noida</strong>
+        <span class="date-desc">(Aug 2021 – Apr 2022):</span> Managed production line calibration, quality checks, and preventive maintenance.
+      </div>
+
+      <!-- ─── EDUCATION ─── -->
+      <div class="section-title">Education</div>
+      <div class="edu-item">
+        <div class="edu-title">Full-Stack Web Development — Masai School, Bengaluru</div>
+        <div class="edu-date">May 2022 – Feb 2023</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-title">B.Tech, Electronics &amp; Communication Engineering — G.L. Bajaj Institute of Technology &amp; Management, Greater Noida</div>
+        <div class="edu-date">Aug 2017 – Jul 2021</div>
+      </div>
+
+      <!-- ─── CERTIFICATIONS ─── -->
+      <div class="section-title">Certifications</div>
+      <ul class="cert-list">
+        <li>PPC Best Practice</li>
+        <li>Performance Marketing Essentials</li>
+        <li>Marketing Automation</li>
+        <li>AI for Content Best Practice</li>
+        <li>AI Trends</li>
+      </ul>
+    </div>
+
+    <!-- ─── Download Bar ─── -->
+    <div class="download-bar">
+      <a class="btn-primary" href="./Puneet_Srivastava_Resume.docx" download="Puneet_Srivastava_Resume.docx">
+        ⬇ Download DOCX
+      </a>
+      <a class="btn-secondary" href="./Puneet_Srivastava_Resume.pdf" target="_blank">
+        📄 View PDF
+      </a>
+    </div>
+  </div>
+</body>
+</html>
