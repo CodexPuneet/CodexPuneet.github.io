@@ -1,5 +1,4 @@
-import React from 'react'
-import { Flex, Spacer, Box, IconButton, useColorMode, Link as IconLink, HStack, Button } from '@chakra-ui/react';
+import { Flex, Spacer, Box, IconButton, useColorMode, HStack, Button } from '@chakra-ui/react';
 import { FaSun, FaMoon, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 import { Link } from "react-scroll";
 import Home from '../Pages/Home'
@@ -25,14 +24,16 @@ const NavBar = () => {
   ];
 
   return (
-    <Box>
+    <Box pos="relative" zIndex={100}>
       <Box
-        pos="sticky"
+        pos="fixed"
         top={0}
-        zIndex={100}
+        left={0}
+        right={0}
+        zIndex={1000}
         px={{ base: 4, md: 8 }}
         py={3}
-        bg={isDark ? 'rgba(11, 15, 25, 0.85)' : 'rgba(255, 255, 255, 0.9)'}
+        bg={isDark ? 'rgba(11, 15, 25, 0.88)' : 'rgba(255, 255, 255, 0.92)'}
         backdropFilter="blur(16px)"
         borderBottom="1px solid"
         borderColor={isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.08)'}
@@ -41,59 +42,63 @@ const NavBar = () => {
       >
         <Flex maxW="1280px" mx="auto" alignItems="center">
           {/* Mobile Menu Button */}
-          <Box display={{ base: 'block', md: 'none' }} mr={2}>
+          <Box display={{ base: 'block', md: 'none' }} mr={3}>
             <Menu />
           </Box>
 
           {/* Logo / Brand Name */}
-          <Box cursor="pointer">
-            <Link activeClass="active" smooth spy to="home">
-              <Box
-                as="span"
-                fontSize={{ base: '18px', md: '22px' }}
-                fontWeight={700}
-                className="font-signature"
-                bgGradient="linear(to-r, #f30e4f, #38bdf8)"
-                bgClip="text"
-                letterSpacing="tight"
-              >
-                {state}
-              </Box>
-            </Link>
-          </Box>
+          <Link activeClass="active" smooth spy offset={-80} to="home" style={{ cursor: 'pointer' }}>
+            <Box
+              as="span"
+              fontSize={{ base: '18px', md: '22px' }}
+              fontWeight={700}
+              className="font-signature"
+              bgGradient="linear(to-r, #f30e4f, #38bdf8)"
+              bgClip="text"
+              letterSpacing="tight"
+              userSelect="none"
+            >
+              {state}
+            </Box>
+          </Link>
 
           <Spacer />
 
           {/* Desktop Nav Links */}
           <HStack spacing={1} display={{ base: 'none', md: 'flex' }}>
             {navLinks.map((item) => (
-              <Box
+              <Link
                 key={item.to}
-                as="span"
-                px={3}
-                py={1.5}
-                borderRadius="md"
-                fontSize="14px"
-                fontWeight={600}
-                color={isDark ? 'gray.300' : 'gray.700'}
-                cursor="pointer"
-                transition="all 0.2s ease"
-                _hover={{
-                  color: '#f30e4f',
-                  bg: isDark ? 'rgba(243, 14, 79, 0.08)' : 'rgba(243, 14, 79, 0.06)',
-                }}
+                activeClass="active"
+                smooth
+                spy
+                offset={-80}
+                to={item.to}
+                style={{ textDecoration: 'none' }}
               >
-                <Link activeClass="active" smooth spy offset={-70} to={item.to}>
+                <Box
+                  as="span"
+                  px={3}
+                  py={1.5}
+                  borderRadius="md"
+                  fontSize="14px"
+                  fontWeight={600}
+                  color={isDark ? 'gray.300' : 'gray.700'}
+                  cursor="pointer"
+                  display="inline-block"
+                  transition="all 0.2s ease"
+                  _hover={{
+                    color: '#f30e4f',
+                    bg: isDark ? 'rgba(243, 14, 79, 0.08)' : 'rgba(243, 14, 79, 0.06)',
+                  }}
+                >
                   {item.label}
-                </Link>
-              </Box>
+                </Box>
+              </Link>
             ))}
 
             {/* Resume Button */}
             <Button
-              as="a"
-              href="./Puneet_Srivastava_Resume.pdf"
-              download
               size="sm"
               ml={3}
               borderRadius="full"
@@ -113,40 +118,44 @@ const NavBar = () => {
 
           {/* Social Links & Theme Switcher */}
           <HStack spacing={2} ml={{ base: 2, md: 4 }}>
-            <Box display={{ base: 'none', lg: 'flex' }}>
-              <IconLink href="https://github.com/CodexPuneet" target="_blank" rel="noreferrer">
-                <IconButton
-                  aria-label="GitHub"
-                  icon={<FaGithub />}
-                  isRound
-                  size="sm"
-                  variant="ghost"
-                  color={isDark ? 'gray.300' : 'gray.600'}
-                  _hover={{ color: '#38bdf8', bg: isDark ? 'whiteAlpha.100' : 'blackAlpha.100' }}
-                />
-              </IconLink>
-              <IconLink href="https://www.linkedin.com/in/puneet-srivastava7/" target="_blank" rel="noreferrer">
-                <IconButton
-                  aria-label="LinkedIn"
-                  icon={<FaLinkedin />}
-                  isRound
-                  size="sm"
-                  variant="ghost"
-                  color={isDark ? 'gray.300' : 'gray.600'}
-                  _hover={{ color: '#38bdf8', bg: isDark ? 'whiteAlpha.100' : 'blackAlpha.100' }}
-                />
-              </IconLink>
-              <IconLink href="mailto:srivastavap714@gmail.com">
-                <IconButton
-                  aria-label="Email"
-                  icon={<FaEnvelope />}
-                  isRound
-                  size="sm"
-                  variant="ghost"
-                  color={isDark ? 'gray.300' : 'gray.600'}
-                  _hover={{ color: '#f30e4f', bg: isDark ? 'whiteAlpha.100' : 'blackAlpha.100' }}
-                />
-              </IconLink>
+            <Box display={{ base: 'none', lg: 'flex' }} gap={2}>
+              <IconButton
+                as="a"
+                href="https://github.com/CodexPuneet"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+                icon={<FaGithub />}
+                isRound
+                size="sm"
+                variant="ghost"
+                color={isDark ? 'gray.300' : 'gray.600'}
+                _hover={{ color: '#38bdf8', bg: isDark ? 'whiteAlpha.100' : 'blackAlpha.100' }}
+              />
+              <IconButton
+                as="a"
+                href="https://www.linkedin.com/in/puneet-srivastava7/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+                icon={<FaLinkedin />}
+                isRound
+                size="sm"
+                variant="ghost"
+                color={isDark ? 'gray.300' : 'gray.600'}
+                _hover={{ color: '#38bdf8', bg: isDark ? 'whiteAlpha.100' : 'blackAlpha.100' }}
+              />
+              <IconButton
+                as="a"
+                href="mailto:srivastavap714@gmail.com"
+                aria-label="Email"
+                icon={<FaEnvelope />}
+                isRound
+                size="sm"
+                variant="ghost"
+                color={isDark ? 'gray.300' : 'gray.600'}
+                _hover={{ color: '#f30e4f', bg: isDark ? 'whiteAlpha.100' : 'blackAlpha.100' }}
+              />
             </Box>
 
             <IconButton
@@ -162,6 +171,9 @@ const NavBar = () => {
           </HStack>
         </Flex>
       </Box>
+
+      {/* Spacer so content doesn't get hidden behind fixed navbar */}
+      <Box h={{ base: "60px", md: "68px" }} />
 
       <div id="home"><Home /></div>
       <div id="about"><About /></div>

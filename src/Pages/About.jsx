@@ -46,6 +46,7 @@ function About() {
       >
         {/* Left Column: Image & Snapshot Card */}
         <MotionBox
+          w="full"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -53,10 +54,12 @@ function About() {
           display="flex"
           flexDirection="column"
           alignItems="center"
+          justifyContent="center"
         >
-          <Box pos="relative" mb={6}>
+          <Box pos="relative" mb={6} display="flex" justifyContent="center" alignItems="center" w="full">
             <img className="profile1" src={Pic} alt="Puneet Srivastava" />
           </Box>
+
 
           <Box
             w="full"
