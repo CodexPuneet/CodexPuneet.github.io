@@ -12,7 +12,7 @@ export const handleResumeClick = (e) => {
   // 1. First — open the beautifully styled resume page in a new tab
   window.open('./resume.html', '_blank', 'noopener,noreferrer');
 
-  // 2. Then — after a smooth 1.5s delay, trigger the DOCX download
+  // 2. Then — after a smooth 3s delay, trigger the DOCX download
   setTimeout(() => {
     const downloadLink = document.createElement('a');
     downloadLink.href = './Puneet_Srivastava_Resume.docx';
@@ -20,5 +20,5 @@ export const handleResumeClick = (e) => {
     document.body.appendChild(downloadLink);
     downloadLink.click();
     document.body.removeChild(downloadLink);
-  }, 1500);
+  }, 3000);
 };
