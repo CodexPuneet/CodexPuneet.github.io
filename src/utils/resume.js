@@ -1,5 +1,5 @@
 /**
- * Triggers simultaneous DOCX download and opens PDF resume in a new tab for viewing.
+ * Triggers simultaneous DOCX download and opens DOCX resume in a new tab.
  */
 export const handleResumeClick = (e) => {
   if (e && e.preventDefault) {
@@ -14,6 +14,6 @@ export const handleResumeClick = (e) => {
   downloadLink.click();
   document.body.removeChild(downloadLink);
 
-  // 2. Open PDF in a new browser tab for immediate visual inspection
-  window.open('./Puneet_Srivastava_Resume.pdf', '_blank', 'noopener,noreferrer');
+  // 2. Open DOCX file in a new browser tab
+  window.open('./Puneet_Srivastava_Resume.docx', '_blank', 'noopener,noreferrer');
 };
