@@ -135,6 +135,18 @@ const Skills = () => {
       style: "shadow-pink-600",
     },
   ];
+  const qaTools = [
+    { id: 1, initials: "VV", title: "Veeva Vault", style: "shadow-pink-500" },
+    { id: 2, initials: "SF", title: "SFMC", style: "shadow-blue-500" },
+    { id: 3, initials: "AEM", title: "Adobe Experience Manager", style: "shadow-red-500" },
+    { id: 4, initials: "VS", title: "Viseven", style: "shadow-purple-500" },
+    { id: 5, initials: "EW", title: "eWizard", style: "shadow-yellow-500" },
+    { id: 6, initials: "OD", title: "OCE-D", style: "shadow-cyan-500" },
+    { id: 7, initials: "OP", title: "OCE-P", style: "shadow-green-500" },
+    { id: 8, initials: "RC", title: "Regulatory Compliance QA", style: "shadow-orange-500" },
+    { id: 9, initials: "CC", title: "Cross-Channel QA", style: "shadow-sky-500" },
+    { id: 10, initials: "JR", title: "Jira", style: "shadow-blue-400" },
+  ];
   return (
     <Box pt={{base: 7, md:110}}  m='80px 0 0 20px' id='skills' >
     <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
@@ -146,15 +158,21 @@ const Skills = () => {
       </div>
       <br></br>
       <p mt='50px'>QA & Compliance tools I work with daily</p>
-      <div className="flex flex-wrap gap-3 py-6">
-        {['Veeva Vault', 'SFMC', 'Adobe Experience Manager (AEM)', 'Viseven', 'eWizard', 'OCE-D', 'OCE-P', 'Regulatory Compliance QA', 'Cross-Channel QA', 'Jira'].map((tool) => (
-          <span
-            key={tool}
-            className="px-4 py-2 rounded-full text-sm font-semibold"
-            style={{ background: 'rgba(243,14,79,0.12)', border: '1px solid rgba(243,14,79,0.5)', color: '#f30e4f' }}
+
+      <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0">
+        {qaTools.map(({ id, initials, title, style }) => (
+          <div
+            key={id}
+            className={`shadow-md hover:scale-105 duration-500 py-4 rounded-lg ${style}`}
           >
-            {tool}
-          </span>
+            <div
+              className="mx-auto flex items-center justify-center rounded-full font-bold"
+              style={{ width: 56, height: 56, background: 'rgba(243,14,79,0.15)', border: '2px solid #f30e4f', color: '#f30e4f', fontSize: initials.length > 2 ? 14 : 18 }}
+            >
+              {initials}
+            </div>
+            <p className="mt-4" style={mode==="dark"?{color:"white"}:{color:"#f30e4f"}}>{title}</p>
+          </div>
         ))}
       </div>
 

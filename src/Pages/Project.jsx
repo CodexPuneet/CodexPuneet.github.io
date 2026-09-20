@@ -8,6 +8,23 @@ import Jio from "../Images/JioMart.png";
 
 
 const Project = () => {
+  const caseStudies = [
+    {
+      id: 'qa-framework',
+      icon: '🧪',
+      title: 'Pharma Digital Media QA Compliance Framework',
+      about: "Designed a 3-layer QA framework — global standards, channel-specific validation, and delivery/compliance sign-off — for a global pharmaceutical client's cross-channel digital campaigns (EDA, Email, Banner, Print, iPDF, AEM, Landing Pages). Sustained zero escalations and zero external bugs over 12+ consecutive months across 7+ channels.",
+      tags: ['QA Strategy', 'Regulatory Compliance', 'Veeva Vault', 'SFMC', 'AEM', 'Process Design'],
+    },
+    {
+      id: 'qa-hub',
+      icon: '📊',
+      title: 'QA Hub — Automation & Tracking Dashboard',
+      about: 'Built a centralized QA Hub plus three automation tools (Video QC, Banner QC, Email QC) for a 12-person QA team reviewing 430+ digital assets/month. Reduced manual review time by an estimated 30%+ and gave stakeholders live visibility into defect tracking, task assignment, and KPIs.',
+      tags: ['QA Automation', 'Dashboard Design', 'Team Tooling', 'KPI Tracking'],
+    },
+  ];
+
   const portfolios = [
     {
       id: 1,
@@ -159,8 +176,26 @@ const Project = () => {
 
   return (
     <Box pt={{base:'10', md:'100'}} id='project'>
+      <Heading textAlign={'center'} style={{color:'rgb(243, 14, 79)'}}>Featured QA Work</Heading>
+      <Text textAlign={'center'} fontSize={{base:14, md:16}} opacity={0.8} mt={2} maxW="700px" mx="auto" px={4}>Case studies from my QA leadership work. Client names are withheld per confidentiality — details describe the approach and impact, not proprietary specifics.</Text>
+
+      <Grid w={{base:'92%', md:'80%'}} mx="auto" templateColumns={{base:'1fr', lg:'repeat(2,1fr)'}} gap={6} m='40px auto 80px'>
+        {caseStudies.map((cs) => (
+          <Box key={cs.id} borderRadius="xl" border="1px solid rgba(243,14,79,0.35)" bg="rgba(255,255,255,0.02)" p={6}>
+            <Text fontSize={40} textAlign="center" mb={2}>{cs.icon}</Text>
+            <Heading fontSize={{base:18, md:20}} textAlign="center" style={{color:'rgb(18, 195, 214)'}} mb={3}>{cs.title}</Heading>
+            <Text fontSize={{base:14, md:15}} textAlign="justify" mb={4}>{cs.about}</Text>
+            <Flex wrap="wrap" gap={2} justifyContent="center">
+              {cs.tags.map((tag, i) => (
+                <Text key={i} fontSize={12} fontWeight={600} px={3} py={1} borderRadius="full" border="1px solid #f30e4f" color="#f30e4f">{tag}</Text>
+              ))}
+            </Flex>
+          </Box>
+        ))}
+      </Grid>
+
       <Heading textAlign={'center'} style={{color:'rgb(243, 14, 79)'}}>My Projects</Heading>
-      <Text textAlign={'center'} fontSize={{base:14, md:16}} opacity={0.8} mt={2} paddingBottom={{base:'0', md:'20'}}>Full-stack projects from my development background</Text>
+      <Text textAlign={'center'} fontSize={{base:14, md:16}} opacity={0.8} mt={2} paddingBottom={{base:'0', md:'20'}}>Full-stack development projects (public code, live demos)</Text>
       
     {
       portfolios.map((project,id)=>{
