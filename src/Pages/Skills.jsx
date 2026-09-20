@@ -187,7 +187,7 @@ const Skills = () => {
           {qaTools.map(({ id, src, title, style }) => (
             <div
               key={id}
-              className={`shadow-lg hover:scale-105 duration-300 py-5 px-3 rounded-2xl border transition-all ${style}`}
+              className={`skill-card-animated py-5 px-3 rounded-2xl border ${style}`}
               style={{
                 background: isDark ? 'rgba(255, 255, 255, 0.03)' : 'rgba(0, 0, 0, 0.02)',
                 borderColor: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.08)',
@@ -220,7 +220,7 @@ const Skills = () => {
           {techs.map(({ id, src, title, style }) => (
             <div
               key={id}
-              className={`shadow-md hover:scale-105 duration-300 py-4 px-2 rounded-2xl border transition-all ${style}`}
+              className={`skill-card-animated py-4 px-2 rounded-2xl border ${style}`}
               style={{
                 background: isDark ? 'rgba(255, 255, 255, 0.02)' : 'rgba(0, 0, 0, 0.02)',
                 borderColor: isDark ? 'rgba(255, 255, 255, 0.06)' : 'rgba(0, 0, 0, 0.06)',

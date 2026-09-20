@@ -165,12 +165,14 @@ const Home = () => {
                 key={i}
                 p={3}
                 borderRadius="lg"
+                className="stat-card-animated"
                 bg={isDark ? 'rgba(255, 255, 255, 0.02)' : 'rgba(0, 0, 0, 0.02)'}
                 border="1px solid"
                 borderColor={isDark ? 'rgba(255, 255, 255, 0.06)' : 'rgba(0, 0, 0, 0.06)'}
                 textAlign="center"
+                cursor="default"
               >
-                <Text fontSize={{ base: '18px', md: '22px' }} fontWeight={800} color="#f30e4f">
+                <Text className="stat-number" fontSize={{ base: '18px', md: '22px' }} fontWeight={800} color="#f30e4f">
                   {h.value}
                 </Text>
                 <Text fontSize={{ base: '11px', md: '12px' }} color={isDark ? 'gray.400' : 'gray.600'} fontWeight={500} mt={0.5}>
