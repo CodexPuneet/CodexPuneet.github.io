@@ -9,62 +9,61 @@ const Social = () => {
       id: 1,
       child: (
         <>
-          LinkedIn <FaLinkedin size={30} />
+          LinkedIn <FaLinkedin size={22} />
         </>
       ),
       href: "https://www.linkedin.com/in/puneet-srivastava7/",
-      style: "rounded-tr-md",
-      
+      style: "rounded-tr-xl",
     },
     {
       id: 2,
       child: (
         <>
-          GitHub <FaGithub size={30} />
+          GitHub <FaGithub size={22} />
         </>
       ),
       href: "https://github.com/CodexPuneet",
-      
     },
     {
       id: 3,
       child: (
         <>
-          Mail <HiOutlineMail size={30} />
+          Email <HiOutlineMail size={22} />
         </>
       ),
-      href: "mailto:srivastavap7144@gmail.com",
-      
+      href: "mailto:srivastavap714@gmail.com",
     },
     {
       id: 4,
       child: (
         <>
-          Resume <BsFillPersonLinesFill size={30} />
+          Resume <BsFillPersonLinesFill size={22} />
         </>
       ),
       href: "./Puneet_Srivastava_Resume.pdf",
-      style: "rounded-br-md",
+      style: "rounded-br-xl",
       download: true,
     },
   ];
 
   return (
-    <div display={{base:"block", md:"none"}} className="hidden lg:flex flex-col top-[35%] left-0 fixed">
+    <div className="hidden lg:flex flex-col top-[35%] left-0 fixed z-40">
       <ul>
-        {links.map(({ id, child, href, style, download}) => (
+        {links.map(({ id, child, href, style, download }) => (
           <li
             key={id}
-            style={{background:'transparent'}}
             className={
-              "flex justify-between items-center w-40 h-14 px-4 ml-[-100px] hover:ml-[-10px] hover:rounded-md duration-300 bg-gray-500" +
-              " " +
-              style 
+              "flex justify-between items-center w-36 h-12 px-4 ml-[-95px] hover:ml-[-5px] duration-300 border-y border-r border-white/10 shadow-lg " +
+              (style || "")
             }
+            style={{
+              background: 'rgba(15, 23, 42, 0.85)',
+              backdropFilter: 'blur(12px)',
+            }}
           >
             <a
               href={href}
-              className="flex justify-between items-center w-full text-cyan-400 hover:text-cyan-800"
+              className="flex justify-between items-center w-full text-gray-200 hover:text-cyan-400 font-semibold text-xs transition-colors"
               download={download}
               target="_blank"
               rel="noreferrer"

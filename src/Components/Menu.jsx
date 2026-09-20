@@ -1,171 +1,97 @@
-import {   Box,  Menu,  MenuButton,  MenuList , MenuItem } from '@chakra-ui/react'
+import { Menu, MenuButton, MenuList, MenuItem, IconButton, useColorMode } from '@chakra-ui/react'
 import React from 'react'
 import { FaBars } from 'react-icons/fa';
-import {Link} from 'react-scroll'
+import { Link } from 'react-scroll'
 
 function Menus() {
+  const { colorMode } = useColorMode();
+  const isDark = colorMode === 'dark';
+
+  const menuItems = [
+    { to: 'home', label: 'Home' },
+    { to: 'about', label: 'About Me' },
+    { to: 'experience', label: 'Experience' },
+    { to: 'skills', label: 'Skills' },
+    { to: 'project', label: 'Work & Projects' },
+    { to: 'contact', label: 'Contact' },
+  ];
 
   return (
-    <Menu >
-    <MenuButton
-      display={{sm:'block',md:'none'}}
-      variant="ghost"
-      
-      borderRadius={5}
-      aria-label="Courses"
-      fontWeight="normal"
-      
-      bg='cyan.400'
-      p={2}
-    >
-      <FaBars />
-    </MenuButton>
-    <MenuList p={4}  border={"2px solid white"}    >
-    
-      <Box textAlign={"left"}>
-        
-     
-        <Link
+    <Menu isLazy>
+      <MenuButton
+        as={IconButton}
+        aria-label="Navigation Menu"
+        icon={<FaBars />}
+        variant="outline"
+        size="sm"
+        borderColor={isDark ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.15)'}
+        color={isDark ? 'gray.200' : 'gray.700'}
+        _hover={{ bg: isDark ? 'whiteAlpha.200' : 'blackAlpha.100' }}
+      />
+      <MenuList
+        bg={isDark ? 'rgba(15, 23, 42, 0.95)' : 'rgba(255, 255, 255, 0.95)'}
+        backdropFilter="blur(16px)"
+        borderColor={isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}
+        boxShadow="0 15px 35px -5px rgba(0, 0, 0, 0.3)"
+        p={2}
+        borderRadius="xl"
+      >
+        {menuItems.map((item) => (
+          <Link
+            key={item.to}
             activeClass="active"
-            to="about"
+            to={item.to}
             spy={true}
             smooth={true}
             offset={-70}
             duration={500}
-        >
-        <MenuItem
-        bg={"#2D3748"}
-          p={2}
-          fontWeight={600}
-          className=' hover:scale-110 font-signature '
-          _hover={{
-            borderRadius: "5px",
-            bg: "gray.100",
-            color: "#FF6347",
-            cursor: "pointer",
-          }}
-          mx={3}
-        >
-          About Me
-        </MenuItem>
-        </Link>
-        
-        <Link
-            activeClass="active"
-            to="experience"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-        >
-        <MenuItem
-          p={2}
-          fontWeight={600}
-          className=' hover:scale-110 font-signature '
-          _hover={{
-            borderRadius: "5px",
-            bg: "gray.100",
-            color: "#FF6347",
-            cursor: "pointer",
-          }}
-          mx={3}
-        >
-          Experience
-        </MenuItem>
-        </Link>
-        <Link
+          >
+            <MenuItem
+              borderRadius="md"
+              px={4}
+              py={2.5}
+              fontSize="14px"
+              fontWeight={600}
+              bg="transparent"
+              color={isDark ? 'gray.200' : 'gray.700'}
+              _hover={{
+                bg: 'rgba(243, 14, 79, 0.12)',
+                color: '#f30e4f',
+              }}
+              _focus={{
+                bg: 'rgba(243, 14, 79, 0.12)',
+                color: '#f30e4f',
+              }}
+            >
+              {item.label}
+            </MenuItem>
+          </Link>
+        ))}
 
-            activeClass="active"  
-            to="skills"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-        >
         <MenuItem
-          p={2}
-          fontWeight={600}
-          className=' hover:scale-110 font-signature '
-          _hover={{
-            borderRadius: "5px",
-            bg: "gray.100",
-            color: "#FF6347",
-            cursor: "pointer",
+          as="a"
+          href="./Puneet_Srivastava_Resume.pdf"
+          download
+          onClick={() => {
+            window.open('https://drive.google.com/file/d/10jdfxVfRRfSMSsD4bQO0p9niSSbcfxcn/view', '_blank', 'noopener,noreferrer');
           }}
-          mx={3}
-        >
-          Skills
-        </MenuItem>
-        </Link>
-        <Link
-            activeClass="active"
-            to="project"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-        >
-        <MenuItem
-          p={2}
+          borderRadius="md"
+          px={4}
+          py={2.5}
+          fontSize="14px"
           fontWeight={600}
-          className=' hover:scale-110 font-signature '
+          bg="rgba(243, 14, 79, 0.1)"
+          color="#f30e4f"
+          mt={1}
           _hover={{
-            borderRadius: "5px",
-            bg: "gray.100",
-            color: "#FF6347",
-            cursor: "pointer",
+            bg: '#f30e4f',
+            color: 'white',
           }}
-          mx={3}
         >
-          Projects
+          Download Resume
         </MenuItem>
-        </Link>
-        <a href='./Puneet_Srivastava_Resume.pdf' download>
-        <MenuItem
-          p={2}
-          fontWeight={600}
-          className=' hover:scale-110 font-signature '
-          _hover={{
-            borderRadius: "5px",
-            bg: "gray.100",
-            color: "#FF6347",
-            cursor: "pointer",
-          }}
-          mx={3}
-        >
-           <button onClick={()=>{window.open("https://drive.google.com/file/d/133sXzhjMvI_z9-2lIGLfIQORx5cdiwrp/view?usp=share_link","_blank",'noopener,noreferrer')}}>
-        Resume
-        </button>
-        </MenuItem>
-        </a>
-        <Link
-        activeClass="active"
-        to="contact"
-        spy={true}
-        smooth={true}
-        offset={-70}
-        duration={500}
-        >
-        <MenuItem
-          p={2}
-          fontWeight={600}
-          className=' hover:scale-170 font-signature'
-          _hover={{
-            borderRadius: "5px",
-            bg: "gray.100",
-            color: "#FF6347",
-            cursor: "pointer",
-          }}
-          mx={3}
-        >
-          Contact
-        </MenuItem>
-        </Link>
-       
-     
-      </Box>
-    </MenuList>
-  </Menu>
+      </MenuList>
+    </Menu>
   )
 }
 

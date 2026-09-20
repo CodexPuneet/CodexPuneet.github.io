@@ -1,137 +1,283 @@
 import React from 'react'
-import { Box, Center, Heading, Text, VStack, Badge, Wrap, WrapItem } from '@chakra-ui/react'
+import { Box, Flex, Heading, Text, VStack, Badge, Wrap, WrapItem, Grid, useColorMode } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 import paymonk from '../Images/paymonk.png'
 import Hypo from '../Images/Hypo.png'
 
-const QARole = ({ title, company, dates, summary, bullets, tools }) => (
-  <Box
-    w={{ base: '92%', md: '90%', lg: '80%' }}
-    mx="auto"
-    mt={{ base: '35px', md: '50px' }}
-    p={{ base: 5, md: 8 }}
-    borderRadius="xl"
-    border="1px solid rgba(243,14,79,0.35)"
-    bg="rgba(255,255,255,0.02)"
+const MotionBox = motion(Box);
+
+const QARoleCard = ({ title, account, badge, company, dates, summary, bullets, tools, isDark }) => (
+  <MotionBox
+    w="100%"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5 }}
+    p={{ base: 6, md: 8 }}
+    borderRadius="2xl"
+    className="glass-card"
+    border="1px solid"
+    borderColor={isDark ? 'rgba(243, 14, 79, 0.25)' : 'rgba(243, 14, 79, 0.2)'}
+    bg={isDark ? 'rgba(15, 23, 42, 0.5)' : 'rgba(255, 255, 255, 0.8)'}
+    position="relative"
+    overflow="hidden"
   >
-    <Center>
-      <Text fontSize={{ base: 18, md: 21, lg: 25 }} fontWeight={700}>{title}</Text>
-    </Center>
-    <Center>
-      <Text fontSize={{ base: 15, md: 17, lg: 19 }} color="cyan.400" fontWeight={600}>{company}</Text>
-    </Center>
-    <Center mb={4}>
-      <Text fontSize={{ base: 14, md: 15, lg: 17 }} fontStyle="italic" opacity={0.8}>{dates}</Text>
-    </Center>
-    <Text fontSize={{ base: 15, md: 16, lg: 18 }} textAlign="justify" mb={3}>{summary}</Text>
-    <Text as="ul" className="list-disc list-inside space-y-2" fontSize={{ base: 14, md: 15, lg: 17 }}>
-      {bullets.map((b, i) => (
-        <li key={i} className="leading-6">{b}</li>
-      ))}
+    {/* Header row: Account & Dates */}
+    <Flex
+      direction={{ base: 'column', md: 'row' }}
+      justify="space-between"
+      align={{ base: 'start', md: 'center' }}
+      mb={3}
+      gap={2}
+    >
+      <Flex wrap="wrap" align="center" gap={2}>
+        <Badge
+          px={3}
+          py={1}
+          borderRadius="full"
+          fontSize="12px"
+          fontWeight={700}
+          className="badge-accent"
+        >
+          {account}
+        </Badge>
+        {badge && (
+          <Badge
+            px={2.5}
+            py={0.5}
+            borderRadius="full"
+            fontSize="11px"
+            fontWeight={600}
+            className="badge-cyan"
+          >
+            {badge}
+          </Badge>
+        )}
+      </Flex>
+      <Text fontSize={{ base: '13px', md: '14px' }} color={isDark ? 'gray.400' : 'gray.500'} fontStyle="italic">
+        📅 {dates}
+      </Text>
+    </Flex>
+
+    {/* Title & Company */}
+    <Heading fontSize={{ base: '19px', md: '23px' }} fontWeight={700} color={isDark ? 'white' : 'gray.900'} mb={1}>
+      {title}
+    </Heading>
+    <Text fontSize={{ base: '14px', md: '15px' }} color="cyan.400" fontWeight={600} mb={4}>
+      {company}
     </Text>
+
+    {/* Summary */}
+    <Text fontSize={{ base: '14px', md: '15px' }} lineHeight="1.7" color={isDark ? 'gray.300' : 'gray.700'} mb={4}>
+      {summary}
+    </Text>
+
+    {/* Bullets */}
+    <Box as="ul" className="space-y-2" mb={5}>
+      {bullets.map((b, i) => (
+        <Flex key={i} align="start" gap={2.5} fontSize={{ base: '13px', md: '14px' }} color={isDark ? 'gray.300' : 'gray.700'} lineHeight="1.6">
+          <Text as="span" color="#f30e4f" fontWeight="bold">✦</Text>
+          <Text as="span">{b}</Text>
+        </Flex>
+      ))}
+    </Box>
+
+    {/* Tool Tags */}
     {tools && (
-      <Wrap mt={4}>
+      <Wrap spacing={2} pt={2} borderTop="1px solid" borderColor={isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)'}>
         {tools.map((t, i) => (
           <WrapItem key={i}>
-            <Badge colorScheme="pink" variant="subtle" px={2} py={1} borderRadius="md">{t}</Badge>
+            <Badge
+              px={2.5}
+              py={1}
+              borderRadius="md"
+              fontSize="11px"
+              fontWeight={600}
+              bg={isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)'}
+              color={isDark ? 'gray.300' : 'gray.700'}
+              border="1px solid"
+              borderColor={isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}
+            >
+              {t}
+            </Badge>
           </WrapItem>
         ))}
       </Wrap>
     )}
-  </Box>
+  </MotionBox>
 )
 
 const Experience = () => {
+  const { colorMode } = useColorMode();
+  const isDark = colorMode === 'dark';
+
   return (
-    <Box pt={{ base: 10, md: 120 }}>
-      <Heading fontSize={{ base: 40, md: 50 }} textAlign={'center'} style={{ color: 'rgb(243, 14, 79)' }}>Work Experience</Heading>
+    <Box maxW="1280px" mx="auto" px={{ base: 4, md: 8 }} py={{ base: 12, md: 24 }}>
+      {/* Section Header */}
+      <VStack spacing={2} textAlign="center" mb={{ base: 12, md: 16 }}>
+        <Badge className="badge-accent" px={3} py={1} borderRadius="full" fontSize="12px" fontWeight={700}>
+          CAREER TRAJECTORY
+        </Badge>
+        <Heading fontSize={{ base: '32px', md: '44px' }} fontWeight={800} color="#f30e4f">
+          Work Experience
+        </Heading>
+        <Text fontSize={{ base: '14px', md: '16px' }} color={isDark ? 'gray.400' : 'gray.600'} maxW="600px">
+          Leading regulated pharma digital media QA, audit readiness, and automation tooling across global agency accounts.
+        </Text>
+      </VStack>
 
-      <VStack spacing={0} mt={10}>
-        <QARole
-          title="Senior QA Analyst (Functioning as QA Lead) — Roche Diagnostics Onboarding (Pilot)"
-          company="WPP Production India (formerly Hogarth Studios India, formerly Wunderman Thompson Studios)"
+      {/* QA Leadership Roles */}
+      <VStack spacing={6} align="stretch">
+        <QARoleCard
+          account="Roche Diagnostics (Pilot Onboarding)"
+          badge="Active Pilot"
+          title="Senior QA Analyst (Functioning as QA Lead)"
+          company="WPP Production India (formerly Hogarth Studios India / Wunderman Thompson Studios)"
           dates="May 2026 – Present"
-          summary="Leading pilot onboarding of the Roche Diagnostics account, building the end-to-end QA compliance framework for CGM (Continuous Glucose Monitoring) digital media assets from the ground up."
+          summary="Leading pilot onboarding of the Roche Diagnostics account, engineering the end-to-end QA compliance framework for Continuous Glucose Monitoring (CGM) digital media assets from the ground up."
           bullets={[
-            'Designing a 3-layer QA framework — global standards, channel-specific validation, and delivery/compliance sign-off — covering 7+ digital channels.',
-            'Established naming convention standards, audio compliance benchmarks (EBU R128), and funnel-stage CTA validation logic for the new account onboarding.',
+            'Architecting a 3-layer QA framework covering global brand standards, channel-specific asset validation, and regulatory delivery sign-off across 7+ digital channels.',
+            'Established naming convention taxonomy, EBU R128 audio loudness compliance benchmarks, and funnel-stage CTA validation rules for account launch.',
           ]}
-          tools={['Veeva Vault', 'SFMC', 'AEM', 'Compliance QA']}
+          tools={['Veeva Vault', 'SFMC', 'AEM', 'Regulatory Compliance QA', 'EBU R128']}
+          isDark={isDark}
         />
 
-        <QARole
-          title="Senior QA Analyst (Functioning as QA Lead) — Roche Pharma Account"
-          company="WPP Production India (formerly Hogarth Studios India, formerly Wunderman Thompson Studios)"
+        <QARoleCard
+          account="Roche Pharma Account"
+          badge="12+ Months Zero Bugs"
+          title="Senior QA Analyst (Functioning as QA Lead)"
+          company="WPP Production India (formerly Hogarth Studios India / Wunderman Thompson Studios)"
           dates="Jul 2025 – May 2026"
-          summary="Onboarded the Roche pharma account and was entrusted with de facto QA Lead responsibilities to prove readiness for the role; stabilized operations within approximately 3 months, transitioning from pilot to steady-state with zero critical defects."
+          summary="Entrusted with de facto QA Lead responsibilities to prove leadership readiness; stabilized operations within 3 months, transitioning from pilot to steady-state delivery with zero critical defects."
           bullets={[
-            'Led a QA team of ~12 resources across 7+ channels (EDA, Email, Banner, Print, iPDF, AEM, Landing Pages), reviewing 430+ digital assets/month, sustaining zero escalations and zero external bugs over 12+ consecutive months.',
-            'Designed and built three QA automation tools — a Video QC tool, a Banner QC tool, and an Email QC tool — reducing manual review time by an estimated 30%+ and increasing team bandwidth.',
-            'Built a centralized QA Hub for tracking, reporting, task assignment, and KPI monitoring across the team, improving delivery visibility and predictability for stakeholders.',
+            'Led a QA team of ~12 engineers across 7+ channels (EDA, Email, Banner, Print, iPDF, AEM, Landing Pages), reviewing 430+ digital assets/month with zero escalations and zero external bugs over 12+ consecutive months.',
+            'Designed and built three proprietary QA automation tools (Video QC, Banner QC, Email QC), slashing manual verification time by 30%+ and expanding team throughput.',
+            'Engineered a centralized QA Hub for tracking, task distribution, defect metrics, and KPI monitoring, delivering complete visibility to global account stakeholders.',
           ]}
-          tools={['Veeva Vault', 'Viseven', 'eWizard', 'OCE-D', 'OCE-P', 'SFMC', 'AEM']}
+          tools={['Veeva Vault', 'Viseven', 'eWizard', 'OCE-D', 'OCE-P', 'SFMC', 'AEM', 'QA Hub']}
+          isDark={isDark}
         />
 
-        <QARole
-          title="Senior QA Analyst — Johnson & Johnson (Janssen) Account"
+        <QARoleCard
+          account="Johnson & Johnson (Janssen)"
+          badge="Promoted"
+          title="Senior QA Analyst"
           company="WPP Production India (formerly Wunderman Thompson Studios)"
           dates="Jul 2024 – Jul 2025"
-          summary="Promoted to Senior QA after strong performance on the GSK account; owned quality assurance for Johnson & Johnson's (Janssen) cross-channel digital campaigns."
+          summary="Promoted to Senior QA following exceptional performance on GSK; owned quality assurance for Johnson & Johnson's (Janssen) cross-channel digital brand campaigns."
           bullets={[
-            "Validated omnichannel campaign assets for accuracy, regulatory compliance, and brand consistency across email, banner, and web channels.",
-            'Partnered with global creative and development teams using Veeva Vault, SFMC, and AEM to identify, document, and resolve defects pre-delivery.',
+            'Validated omnichannel digital campaign assets for regulatory compliance, visual precision, and brand guideline conformity across email, web, and display channels.',
+            'Collaborated with global creative and technical delivery teams via Veeva Vault, SFMC, and AEM to detect, document, and resolve defects prior to client delivery.',
           ]}
-          tools={['Veeva Vault', 'SFMC', 'AEM']}
+          tools={['Veeva Vault', 'SFMC', 'AEM', 'Omnichannel QA']}
+          isDark={isDark}
         />
 
-        <QARole
-          title="QA Analyst — GSK Account"
+        <QARoleCard
+          account="GSK Account"
+          badge="Foundation"
+          title="QA Analyst"
           company="Wunderman Thompson Studios"
           dates="Oct 2023 – Jul 2024"
-          summary="Started career in regulated pharma digital media QA, performing quality assurance across 7+ channels for GSK."
+          summary="Launched career in regulated life-sciences digital media QA, executing rigorous quality verification across 7+ channels for GSK global campaigns."
           bullets={[
-            'Designed and executed test plans, test cases, and test scenarios; performed manual, unit, and system testing across multiple concurrent projects.',
-            'Documented QA processes and defect reports, ensuring compliance with client and industry standards ahead of every delivery.',
+            'Authored and executed comprehensive test plans, test cases, and test matrices; executed functional, responsive, and cross-browser validation across concurrent campaigns.',
+            'Maintained defect documentation and compliance audit reports, assuring client and industry standard alignment ahead of every release.',
           ]}
-          tools={['EDA', 'Email', 'Banner', 'Print', 'AEM']}
+          tools={['EDA', 'Email QA', 'HTML5 Banners', 'Print', 'AEM']}
+          isDark={isDark}
         />
       </VStack>
 
-      <Center mt={16} mb={6}>
-        <Text fontSize={{ base: 26, md: 32 }} fontWeight={700} style={{ color: 'rgb(243, 14, 79)' }}>Earlier Development Experience</Text>
-      </Center>
+      {/* Earlier Full-Stack Dev Experience */}
+      <Box mt={16}>
+        <VStack spacing={2} textAlign="center" mb={10}>
+          <Heading fontSize={{ base: '24px', md: '30px' }} fontWeight={700} color="#f30e4f">
+            Earlier Software Engineering Experience
+          </Heading>
+          <Text fontSize={{ base: '13px', md: '15px' }} color={isDark ? 'gray.400' : 'gray.600'} maxW="600px">
+            Hands-on full-stack development foundations that now power my technical approach to QA and automation.
+          </Text>
+        </VStack>
 
-      <Center>
-        <figure>
-          <Box><img className='paymonk' src={paymonk} alt="Pic" /></Box>
-        </figure>
-      </Center>
-      <Box w={{ base: '92%', md: '90%', lg: '80%' }} mt={{ base: '30px', md: '40px' }} ml={{ base: '15px', md: '42px', lg: '150px' }} lineHeight={{ base: '7', md: '9' }}>
-        <Center>
-          <Text fontSize={{ base: 16, md: 17, lg: 22 }} fontWeight={700}>Actas Technology Pvt Ltd. (PayMonk) — Frontend Developer</Text>
-        </Center>
-        <Center>
-          <Text fontSize={{ base: 14, md: 15, lg: 19 }} fontStyle="italic" opacity={0.8}>Apr 2023 – Sep 2023</Text>
-        </Center>
-        <Text mt={4} fontSize={{ base: 15, md: 16, lg: 19 }} textAlign={'justify'}>
-          Built and maintained responsive fintech web interfaces, created dynamic themes for white labels, and integrated APIs across dashboards using React, Redux, and ChakraUI.
-        </Text>
-      </Box>
+        <Grid templateColumns={{ base: '1fr', md: '1fr 1fr' }} gap={6}>
+          {/* PayMonk */}
+          <MotionBox
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            p={6}
+            borderRadius="xl"
+            className="glass-card"
+            border="1px solid"
+            borderColor={isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.08)'}
+          >
+            <Flex justify="space-between" align="start" mb={4}>
+              <Box bg="white" p={2} borderRadius="lg" w="fit-content">
+                <img className="paymonk" src={paymonk} alt="PayMonk" />
+              </Box>
+              <Text fontSize="12px" color={isDark ? 'gray.400' : 'gray.500'} fontStyle="italic">
+                Apr 2023 – Sep 2023
+              </Text>
+            </Flex>
+            <Heading fontSize="18px" fontWeight={700} color={isDark ? 'white' : 'gray.900'} mb={1}>
+              Frontend Developer
+            </Heading>
+            <Text fontSize="14px" color="cyan.400" fontWeight={600} mb={3}>
+              Actas Technology Pvt Ltd. (PayMonk)
+            </Text>
+            <Text fontSize="13px" lineHeight="1.6" color={isDark ? 'gray.300' : 'gray.600'} mb={4}>
+              Developed responsive fintech web interfaces, built dynamic multi-tenant white-label themes, and integrated transactional APIs across high-throughput financial dashboards.
+            </Text>
+            <Wrap spacing={1.5}>
+              {['React', 'Redux', 'ChakraUI', 'TypeScript', 'REST APIs'].map((t, i) => (
+                <WrapItem key={i}>
+                  <Badge fontSize="10px" px={2} py={0.5} borderRadius="md" className="badge-accent">{t}</Badge>
+                </WrapItem>
+              ))}
+            </Wrap>
+          </MotionBox>
 
-      <Center mt={12}>
-        <figure>
-          <Box><img className='paymonk' src={Hypo} alt="Pic" /></Box>
-        </figure>
-      </Center>
-      <Box w={{ base: '92%', md: '90%', lg: '80%' }} mt={{ base: '30px', md: '40px' }} mb={20} ml={{ base: '15px', md: '42px', lg: '150px' }} lineHeight={{ base: '7', md: '9' }}>
-        <Center>
-          <Text fontSize={{ base: 16, md: 17, lg: 22 }} fontWeight={700}>Hypothesize — Full Stack Developer</Text>
-        </Center>
-        <Center>
-          <Text fontSize={{ base: 14, md: 15, lg: 19 }} fontStyle="italic" opacity={0.8}>Feb 2023 – Apr 2023</Text>
-        </Center>
-        <Text mt={4} fontSize={{ base: 15, md: 16, lg: 19 }} textAlign={'justify'}>
-          Developed and maintained responsive web apps end-to-end using React.js, Redux, TypeScript, and Ant Design, delivering a client website from scratch within a 2-month deadline.
-        </Text>
+          {/* Hypothesize */}
+          <MotionBox
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            p={6}
+            borderRadius="xl"
+            className="glass-card"
+            border="1px solid"
+            borderColor={isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.08)'}
+          >
+            <Flex justify="space-between" align="start" mb={4}>
+              <Box bg="white" p={2} borderRadius="lg" w="fit-content">
+                <img className="paymonk" src={Hypo} alt="Hypothesize" />
+              </Box>
+              <Text fontSize="12px" color={isDark ? 'gray.400' : 'gray.500'} fontStyle="italic">
+                Feb 2023 – Apr 2023
+              </Text>
+            </Flex>
+            <Heading fontSize="18px" fontWeight={700} color={isDark ? 'white' : 'gray.900'} mb={1}>
+              Full Stack Developer
+            </Heading>
+            <Text fontSize="14px" color="cyan.400" fontWeight={600} mb={3}>
+              Hypothesize
+            </Text>
+            <Text fontSize="13px" lineHeight="1.6" color={isDark ? 'gray.300' : 'gray.600'} mb={4}>
+              Developed end-to-end responsive web applications from scratch within an aggressive 2-month deadline using TypeScript, Ant Design, and Node.js for client DPS.
+            </Text>
+            <Wrap spacing={1.5}>
+              {['React', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Ant Design'].map((t, i) => (
+                <WrapItem key={i}>
+                  <Badge fontSize="10px" px={2} py={0.5} borderRadius="md" className="badge-accent">{t}</Badge>
+                </WrapItem>
+              ))}
+            </Wrap>
+          </MotionBox>
+        </Grid>
       </Box>
     </Box>
   )

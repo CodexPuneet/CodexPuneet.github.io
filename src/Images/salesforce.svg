@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="sfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00A1E0" />
+      <stop offset="100%" stop-color="#0070D2" />
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="22" fill="rgba(0, 161, 224, 0.15)" />
+  <path d="M43 32 C46 27 52 25 58 27 C64 29 67 33 67 38 C71 38 75 41 76 45 C78 49 76 54 73 57 C77 58 80 62 80 66 C80 72 75 76 69 76 L32 76 C25 76 20 71 20 64 C20 58 24 53 30 52 C29 48 31 43 35 40 C39 37 44 38 47 41" stroke="url(#sfGrad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="rgba(0, 161, 224, 0.25)" />
+  <text x="50" y="62" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="900" font-size="14" fill="#00A1E0" text-anchor="middle" letter-spacing="1">SFMC</text>
+</svg>

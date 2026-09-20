@@ -1,40 +1,126 @@
 
-.profile{
-          width: 335px; 
-           height:400px;
-           box-shadow: 5px 10px #b6b2a9;
-           border-image-slice: 20%;
-            order: 1;
-             animation: profile__animate 9s ease-in-out infinite 1s;
-            }
-@keyframes profile__animate {
-    0% {
-        border-radius: 60% 40% 30% 70%/ 60% 30% 70% 40%;
-    }
-    50% {
-        border-radius: 30% 60% 70% 40%/ 50% 60% 30% 60%;
-    }
-    100% {
-        border-radius: 60% 40% 30% 70%/ 60% 30% 70% 40%;
-    }
+/* Executive Portfolio Styling & Animations */
 
-}
-.profile1{
-    width: 270px; 
-     height:310px;
-     box-shadow: 5px 10px 4px #8f8f96;
-     border-image-slice: 50%;
-      order: 1;
-      }
-.paymonk{
-    width: 150px;
+.profile {
+  width: 320px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 2px solid rgba(243, 14, 79, 0.45);
+  box-shadow: 0 20px 45px -12px rgba(243, 14, 79, 0.35), 0 0 30px rgba(56, 189, 248, 0.2);
+  animation: profile__float 6s ease-in-out infinite;
+  transition: all 0.4s ease;
 }
 
-#grad{
-    /* background-image: linear-gradient(to right, rgb(221, 45, 45),rgb(197, 137, 26),rgb(244, 244, 5),rgb(221, 45, 45),rgb(197, 137, 26),rgb(244, 244, 5)); */
-    background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(169, 169, 169));
+.profile:hover {
+  border-color: rgba(56, 189, 248, 0.7);
+  box-shadow: 0 25px 50px -10px rgba(56, 189, 248, 0.4), 0 0 35px rgba(243, 14, 79, 0.3);
+  transform: translateY(-4px) scale(1.02);
+}
 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  
+@keyframes profile__float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.profile1 {
+  width: 280px;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid rgba(243, 14, 79, 0.4);
+  box-shadow: 0 15px 35px -10px rgba(243, 14, 79, 0.3);
+  transition: all 0.3s ease;
+}
+
+.profile1:hover {
+  transform: translateY(-4px);
+  border-color: #38bdf8;
+  box-shadow: 0 20px 40px -10px rgba(56, 189, 248, 0.3);
+}
+
+.paymonk {
+  width: 140px;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.paymonk:hover {
+  transform: scale(1.05);
+}
+
+/* High-contrast accessible gradient for Puneet Srivastava */
+#grad {
+  background-image: linear-gradient(135deg, #f30e4f 0%, #ff6b8b 50%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  display: inline-block;
+}
+
+/* Classy Glassmorphism Utilities */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(243, 14, 79, 0.4);
+  box-shadow: 0 16px 36px -10px rgba(243, 14, 79, 0.25);
+  transform: translateY(-3px);
+}
+
+/* Primary Resume Button */
+.downloadbtn {
+  background: linear-gradient(135deg, #f30e4f 0%, #d40840 100%);
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(243, 14, 79, 0.4);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.downloadbtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(243, 14, 79, 0.6);
+  background: linear-gradient(135deg, #ff1a5d 0%, #e00946 100%);
+}
+
+/* Secondary CTA Button */
+.secondary-btn {
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background: rgba(56, 189, 248, 0.16);
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.3);
+}
+
+/* Executive Accent Badges */
+.badge-accent {
+  background: rgba(243, 14, 79, 0.12);
+  border: 1px solid rgba(243, 14, 79, 0.4);
+  color: #f30e4f;
+}
+
+.badge-cyan {
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
 }

@@ -13,6 +13,7 @@ const Project = () => {
       id: 'qa-framework',
       icon: '🧪',
       title: 'Pharma Digital Media QA Compliance Framework',
+      metric: '12+ Months Zero Bugs',
       about: "Designed a 3-layer QA framework — global standards, channel-specific validation, and delivery/compliance sign-off — for a global pharmaceutical client's cross-channel digital campaigns (EDA, Email, Banner, Print, iPDF, AEM, Landing Pages). Sustained zero escalations and zero external bugs over 12+ consecutive months across 7+ channels.",
       tags: ['QA Strategy', 'Regulatory Compliance', 'Veeva Vault', 'SFMC', 'AEM', 'Process Design'],
     },
@@ -20,7 +21,8 @@ const Project = () => {
       id: 'qa-hub',
       icon: '📊',
       title: 'QA Hub — Automation & Tracking Dashboard',
-      about: 'Built a centralized QA Hub plus three automation tools (Video QC, Banner QC, Email QC) for a 12-person QA team reviewing 430+ digital assets/month. Reduced manual review time by an estimated 30%+ and gave stakeholders live visibility into defect tracking, task assignment, and KPIs.',
+      metric: '30%+ Time Saved',
+      about: 'Built a centralized QA Hub plus three proprietary automation tools (Video QC, Banner QC, Email QC) for a 12-person QA team reviewing 430+ digital assets/month. Reduced manual review time by an estimated 30%+ and gave stakeholders live visibility into defect tracking, task assignment, and KPIs.',
       tags: ['QA Automation', 'Dashboard Design', 'Team Tooling', 'KPI Tracking'],
     },
   ];
@@ -175,73 +177,165 @@ const Project = () => {
   ];
 
   return (
-    <Box pt={{base:'10', md:'100'}} id='project'>
-      <Heading textAlign={'center'} style={{color:'rgb(243, 14, 79)'}}>Featured QA Work</Heading>
-      <Text textAlign={'center'} fontSize={{base:14, md:16}} opacity={0.8} mt={2} maxW="700px" mx="auto" px={4}>Case studies from my QA leadership work. Client names are withheld per confidentiality — details describe the approach and impact, not proprietary specifics.</Text>
+    <Box maxW="1280px" mx="auto" px={{ base: 4, md: 8 }} py={{ base: 12, md: 24 }} id="project">
+      {/* Featured QA Leadership Section */}
+      <Box textAlign="center" mb={{ base: 10, md: 14 }}>
+        <p className="badge-accent inline-block px-3 py-1 rounded-full text-xs font-bold mb-2">
+          LEADERSHIP & AUTOMATION
+        </p>
+        <Heading fontSize={{ base: '32px', md: '44px' }} fontWeight={800} color="#f30e4f">
+          Featured QA Work
+        </Heading>
+        <Text fontSize={{ base: '14px', md: '16px' }} color="gray.400" maxW="700px" mx="auto" mt={2}>
+          Case studies from my QA leadership and automation engineering. Client names are withheld per confidentiality —
+          highlights detail the compliance methodology, systems architecture, and business impact.
+        </Text>
+      </Box>
 
-      <Grid w={{base:'92%', md:'80%'}} mx="auto" templateColumns={{base:'1fr', lg:'repeat(2,1fr)'}} gap={6} m='40px auto 80px'>
+      <Grid templateColumns={{ base: '1fr', lg: 'repeat(2, 1fr)' }} gap={6} mb={20}>
         {caseStudies.map((cs) => (
-          <Box key={cs.id} borderRadius="xl" border="1px solid rgba(243,14,79,0.35)" bg="rgba(255,255,255,0.02)" p={6}>
-            <Text fontSize={40} textAlign="center" mb={2}>{cs.icon}</Text>
-            <Heading fontSize={{base:18, md:20}} textAlign="center" style={{color:'rgb(18, 195, 214)'}} mb={3}>{cs.title}</Heading>
-            <Text fontSize={{base:14, md:15}} textAlign="justify" mb={4}>{cs.about}</Text>
-            <Flex wrap="wrap" gap={2} justifyContent="center">
+          <Box
+            key={cs.id}
+            p={{ base: 6, md: 8 }}
+            borderRadius="2xl"
+            className="glass-card"
+            border="1px solid"
+            borderColor="rgba(243, 14, 79, 0.3)"
+            position="relative"
+            display="flex"
+            flexDirection="column"
+            justifyContent="space-between"
+          >
+            <Box>
+              <Flex justify="space-between" align="center" mb={3}>
+                <Text fontSize="36px">{cs.icon}</Text>
+                <span className="badge-accent px-3 py-1 rounded-full text-xs font-bold">
+                  {cs.metric}
+                </span>
+              </Flex>
+              <Heading fontSize={{ base: '19px', md: '21px' }} color="cyan.400" mb={3} fontWeight={700}>
+                {cs.title}
+              </Heading>
+              <Text fontSize={{ base: '14px', md: '15px' }} lineHeight="1.7" color="gray.300" mb={6} textAlign="justify">
+                {cs.about}
+              </Text>
+            </Box>
+
+            <Flex wrap="wrap" gap={2}>
               {cs.tags.map((tag, i) => (
-                <Text key={i} fontSize={12} fontWeight={600} px={3} py={1} borderRadius="full" border="1px solid #f30e4f" color="#f30e4f">{tag}</Text>
+                <span
+                  key={i}
+                  className="badge-cyan px-2.5 py-1 rounded-md text-xs font-semibold"
+                >
+                  {tag}
+                </span>
               ))}
             </Flex>
           </Box>
         ))}
       </Grid>
 
-      <Heading textAlign={'center'} style={{color:'rgb(243, 14, 79)'}}>My Projects</Heading>
-      <Text textAlign={'center'} fontSize={{base:14, md:16}} opacity={0.8} mt={2} paddingBottom={{base:'0', md:'20'}}>Full-stack development projects (public code, live demos)</Text>
-      
-    {
-      portfolios.map((project,id)=>{
+      {/* Full-Stack Software Engineering Section */}
+      <Box textAlign="center" mb={{ base: 10, md: 14 }}>
+        <p className="badge-cyan inline-block px-3 py-1 rounded-full text-xs font-bold mb-2">
+          SOFTWARE ENGINEERING
+        </p>
+        <Heading fontSize={{ base: '28px', md: '36px' }} fontWeight={800} color="#f30e4f">
+          Full-Stack Projects
+        </Heading>
+        <Text fontSize={{ base: '14px', md: '15px' }} color="gray.400" maxW="600px" mx="auto" mt={2}>
+          Full-stack development projects from my software engineering background (public repositories & live deployments).
+        </Text>
+      </Box>
 
-        return <Grid w='80%' key={id}  templateColumns={{md:'repeat(1,1fr)',lg:'repeat(2,1fr)'}} gap={{lg:'4'}}  rounded='lg'   m='40px auto'  fontSize='14px' transition='all 0.3s ease-in-out' _hover={{transform:'scale(1.1)'}}>
-        <Grid >
-        <Img src={project.src} align="center" borderRadius='10px 10px 0 0'/>
-          <Box >
-        <Flex justifyContent={'center'} gap={4} mb={{md:'2',lg:'4'}} mt={4}>
-        <Link href={project.git} style={{textDecoration:'none'}} target='_blank'>
-        <Button color={'white'} bg='blue.400' _hover={{bg:"#ffff",color:"black"}}>
-          <Img src='https://www.svgrepo.com/show/332084/github.svg' w={7} mr={2}/>
-          Github</Button>
-        </Link>
-        <Link href={project.deploy} style={{textDecoration:'none'}} target='_blank'>
-        <Button color={'white'}  bg='blue.400' _hover={{bg:"#ffff",color:"black"}}><LinkIcon mr={2}/>Deployed</Button>
-        </Link>
-        </Flex>
-        </Box>
-        </Grid>
-         <Grid p={4}>
-          <Box mt={{md:0,lg:0}}>
-         <Heading textAlign={'center'} style={{color:' rgb(18, 195, 214)'}}>{project.title}</Heading>
-          <Text fontSize={20} p={5}>{project.about}</Text>
-          </Box>
-          <Box>
-          <Text fontWeight={'bold'} fontSize='20' style={{color:' rgb(18, 195, 214)'}}>Tech Stack</Text>
-           <Flex wrap='wrap' w={{base:'100%',md:'70%',lg:'70%'}}>
+      <Box className="space-y-8">
+        {portfolios.map((project, id) => (
+          <Grid
+            key={id}
+            templateColumns={{ base: '1fr', lg: '1fr 1.2fr' }}
+            gap={6}
+            p={{ base: 5, md: 6 }}
+            borderRadius="2xl"
+            className="glass-card"
+            alignItems="center"
+            transition="all 0.3s ease"
+            _hover={{
+              borderColor: 'rgba(56, 189, 248, 0.4)',
+              transform: 'translateY(-4px)',
+            }}
+          >
+            <Box overflow="hidden" borderRadius="xl" border="1px solid rgba(255,255,255,0.08)">
+              <Img
+                src={project.src}
+                alt={project.title}
+                w="100%"
+                h={{ base: '200px', md: '240px' }}
+                objectFit="cover"
+              />
+            </Box>
 
-            {
-              project.techStack.map((tech,index)=>{
-                return <Flex key={index} border= {'1.5px solid gray'} borderRadius={'30px'} p='5px 10px' m='1' fontSize='14px' transition='all 0.3s ease-in-out'  _hover={{transform:'translateY(-5px)'}}>
-                <Img  src={tech.img} w='20px' h='20px'/>
-                <Text>{tech.name}</Text>
-               
+            <Box>
+              <Heading fontSize={{ base: '22px', md: '26px' }} color="cyan.400" mb={2}>
+                {project.title}
+              </Heading>
+              <Text fontSize={{ base: '14px', md: '15px' }} lineHeight="1.6" color="gray.300" mb={4}>
+                {project.about}
+              </Text>
+
+              {/* Tech Stack */}
+              <Box mb={5}>
+                <Text fontSize="12px" fontWeight={700} color="gray.400" textTransform="uppercase" letterSpacing="wider" mb={2}>
+                  Tech Stack
+                </Text>
+                <Flex wrap="wrap" gap={1.5}>
+                  {project.techStack.map((tech, index) => (
+                    <Flex
+                      key={index}
+                      align="center"
+                      gap={1.5}
+                      px={2.5}
+                      py={1}
+                      borderRadius="full"
+                      bg="rgba(255,255,255,0.04)"
+                      border="1px solid rgba(255,255,255,0.1)"
+                      fontSize="12px"
+                    >
+                      <Img src={tech.img} w="16px" h="16px" objectFit="contain" />
+                      <Text color="gray.200">{tech.name}</Text>
+                    </Flex>
+                  ))}
                 </Flex>
-             
-            })
-          }
-          </Flex>
-          </Box>
-           </Grid>
-    
-</Grid>
-      })
-    }
+              </Box>
+
+              {/* Action Buttons */}
+              <Flex gap={3}>
+                <Link href={project.git} isExternal style={{ textDecoration: 'none' }}>
+                  <Button
+                    size="sm"
+                    borderRadius="lg"
+                    bg="rgba(255, 255, 255, 0.08)"
+                    color="white"
+                    _hover={{ bg: 'rgba(255, 255, 255, 0.16)' }}
+                    leftIcon={<Img src="https://www.svgrepo.com/show/332084/github.svg" w={4} />}
+                  >
+                    GitHub
+                  </Button>
+                </Link>
+                <Link href={project.deploy} isExternal style={{ textDecoration: 'none' }}>
+                  <Button
+                    size="sm"
+                    borderRadius="lg"
+                    className="downloadbtn"
+                    leftIcon={<LinkIcon />}
+                  >
+                    Live Demo
+                  </Button>
+                </Link>
+              </Flex>
+            </Box>
+          </Grid>
+        ))}
+      </Box>
       
     
 

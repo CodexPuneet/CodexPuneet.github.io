@@ -1,62 +1,200 @@
-import React from 'react'
-import wave from '../Images/wave.gif'
+import React, { useEffect } from 'react'
 import Typewriter from 'typewriter-effect/dist/core';
-import { Box, Flex, Grid, Img, Text } from '@chakra-ui/react';
+import { Box, Flex, Grid, Text, HStack, Badge, Button, useColorMode } from '@chakra-ui/react';
+import { DownloadIcon, ArrowForwardIcon } from '@chakra-ui/icons';
+import { Link } from 'react-scroll';
+import { motion } from 'framer-motion';
 import Pic from '../Images/image.jpg';
 import './Home.css'
 
-
+const MotionBox = motion(Box);
+const MotionFlex = motion(Flex);
 
 const Home = () => {
+  const { colorMode } = useColorMode();
+  const isDark = colorMode === 'dark';
+
   const typeWriter = () => {
     const type = new Typewriter('#typer', {
       loop: true,
-      delay: 105,
+      delay: 75,
+      deleteSpeed: 45,
     });
     type.typeString('Senior QA Analyst (Functioning as QA Lead)')
-      .pauseFor(2500)
-      .deleteAll()
-      .typeString('Pharma & Diagnostics Digital Media QA')
       .pauseFor(2200)
       .deleteAll()
-      .typeString('Full-Stack Developer turned QA Leader')
-      .pauseFor(2200)
+      .typeString('Cross-Channel Pharma & Diagnostics QA')
+      .pauseFor(2000)
+      .deleteAll()
+      .typeString('Full-Stack Engineer turned QA Leader')
+      .pauseFor(2000)
+      .deleteAll()
+      .typeString('QA Automation & Compliance Systems Builder')
+      .pauseFor(2000)
       .deleteAll()
       .start();
   };
-  const style={
-    "bgGradient": 'linear(to-r, green.200, pink.500)'
-    // 
-  }
-  
- React.useEffect(() => {
+
+  useEffect(() => {
     typeWriter();
   }, []);
+
+  const highlights = [
+    { label: 'Zero Escalations', value: '12+ Months' },
+    { label: 'Monthly Asset Review', value: '430+' },
+    { label: 'QA Team Leadership', value: '~12 Engineers' },
+    { label: 'Review Time Saved', value: '30%+' },
+  ];
+
   return (
-    <>
-    <Grid w={{base:'97%',md:'70%'}}  templateColumns={{md:'1fr',lg:'1fr 1fr'}} m='5px auto 300px' pt={100}>
-      <Box p={10} minW={{md:'100%',lg:'500px'}} >
-      <Text  fontWeight={500} fontSize={{base:'27px',md:'35px',lg:'40px'}} >Hi Folks, <img  src={wave} width={80} alt="logo" /> I'm <span  id='grad'>Puneet Srivastava</span></Text>
-      <Text fontWeight={530} fontSize={{base:'20px',md:'24px',lg:'28px'}} >a <span style={{color:'#f30e4f'}} id='typer'></span></Text>
-      <Text fontSize={18}>I lead cross-channel Quality Assurance for regulated pharmaceutical and diagnostics digital media campaigns — sustaining zero escalations and zero external bugs across 7+ channels for 12+ consecutive months. My full-stack development background shapes how I build QA automation tools and think about systems, not just defects. </Text>
-      <a href='./Puneet_Srivastava_Resume.pdf' download  >
-      <Flex w={'200px'}gap={2} my='4'p={2} borderRadius={'2xl'} fontSize='20px' alignItems='center' justifyContent={'center'} className='downloadbtn' 
-      onClick={()=>{window.open("https://drive.google.com/file/d/10jdfxVfRRfSMSsD4bQO0p9niSSbcfxcn/view","_blank",'noopener,noreferrer')}}
+    <Box maxW="1280px" mx="auto" px={{ base: 4, md: 8 }} pt={{ base: 8, md: 20 }} pb={{ base: 12, md: 20 }}>
+      <Grid
+        templateColumns={{ base: '1fr', lg: '1.2fr 0.8fr' }}
+        gap={{ base: 10, lg: 12 }}
+        alignItems="center"
       >
-        <Img src='https://i.ibb.co/MRdbgtQ/download.png' w={10} h={10} mr={2} />
-         Resume
-      </Flex>
-      </a>
-      
- 
-      </Box>
-      <Flex justifyContent={'center'} alignItems='center' >
-      
-      <Box ><img className='profile' src={Pic} alt="" /></Box>
-   
-      </Flex>
-    </Grid>
-    </>
+        <MotionBox
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+        >
+          {/* Executive Badge */}
+          <HStack spacing={2} mb={4} wrap="wrap">
+            <Badge
+              px={3}
+              py={1.5}
+              borderRadius="full"
+              fontSize={{ base: '11px', md: '12px' }}
+              fontWeight={700}
+              className="badge-accent"
+              letterSpacing="wide"
+            >
+              🛡️ REGULATED PHARMA & DIAGNOSTICS QA LEAD
+            </Badge>
+            <Badge
+              px={3}
+              py={1.5}
+              borderRadius="full"
+              fontSize={{ base: '11px', md: '12px' }}
+              fontWeight={600}
+              className="badge-cyan"
+            >
+              WPP Production India
+            </Badge>
+          </HStack>
+
+          {/* Heading */}
+          <Text
+            fontSize={{ base: '30px', md: '44px', lg: '50px' }}
+            fontWeight={800}
+            lineHeight={{ base: '1.2', md: '1.15' }}
+            color={isDark ? 'white' : 'gray.900'}
+          >
+            Hi, I'm <span id="grad">Puneet Srivastava</span>
+          </Text>
+
+          {/* Dynamic Role */}
+          <Text
+            mt={2}
+            fontSize={{ base: '18px', md: '22px', lg: '26px' }}
+            fontWeight={600}
+            color={isDark ? 'gray.300' : 'gray.700'}
+            minH={{ base: '56px', md: '38px' }}
+          >
+            I am a <span style={{ color: '#f30e4f', fontWeight: 700 }} id="typer"></span>
+          </Text>
+
+          {/* Executive Summary */}
+          <Text
+            mt={4}
+            fontSize={{ base: '15px', md: '17px' }}
+            lineHeight="1.75"
+            color={isDark ? 'gray.300' : 'gray.600'}
+            textAlign="justify"
+          >
+            Leading cross-channel Quality Assurance for regulated pharmaceutical and diagnostics digital media campaigns.
+            Over 3+ years, I have sustained <strong>zero escalations and zero external defects for 12+ consecutive months</strong> across
+            7+ digital channels. My software engineering background drives how I build proprietary QA automation tools,
+            accelerating review cycles and eliminating systemic defects before deployment.
+          </Text>
+
+          {/* Action CTAs */}
+          <Flex wrap="wrap" gap={4} mt={6} alignItems="center">
+            <Button
+              as="a"
+              href="./Puneet_Srivastava_Resume.pdf"
+              download
+              leftIcon={<DownloadIcon />}
+              className="downloadbtn"
+              size="lg"
+              borderRadius="xl"
+              px={6}
+              fontSize="15px"
+              onClick={() => {
+                window.open('https://drive.google.com/file/d/10jdfxVfRRfSMSsD4bQO0p9niSSbcfxcn/view', '_blank', 'noopener,noreferrer');
+              }}
+            >
+              Download Resume
+            </Button>
+
+            <Link activeClass="active" smooth spy offset={-70} to="experience">
+              <Button
+                rightIcon={<ArrowForwardIcon />}
+                className="secondary-btn"
+                size="lg"
+                borderRadius="xl"
+                px={6}
+                fontSize="15px"
+              >
+                View Experience
+              </Button>
+            </Link>
+          </Flex>
+
+          {/* Key Stat Cards */}
+          <Grid
+            templateColumns={{ base: 'repeat(2, 1fr)', sm: 'repeat(4, 1fr)' }}
+            gap={3}
+            mt={8}
+            pt={6}
+            borderTop="1px solid"
+            borderColor={isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.08)'}
+          >
+            {highlights.map((h, i) => (
+              <Box
+                key={i}
+                p={3}
+                borderRadius="lg"
+                bg={isDark ? 'rgba(255, 255, 255, 0.02)' : 'rgba(0, 0, 0, 0.02)'}
+                border="1px solid"
+                borderColor={isDark ? 'rgba(255, 255, 255, 0.06)' : 'rgba(0, 0, 0, 0.06)'}
+                textAlign="center"
+              >
+                <Text fontSize={{ base: '18px', md: '22px' }} fontWeight={800} color="#f30e4f">
+                  {h.value}
+                </Text>
+                <Text fontSize={{ base: '11px', md: '12px' }} color={isDark ? 'gray.400' : 'gray.600'} fontWeight={500} mt={0.5}>
+                  {h.label}
+                </Text>
+              </Box>
+            ))}
+          </Grid>
+        </MotionBox>
+
+        {/* Profile Image with subtle glow */}
+        <MotionFlex
+          justifyContent="center"
+          alignItems="center"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+        >
+          <Box pos="relative">
+            <img className="profile" src={Pic} alt="Puneet Srivastava" />
+          </Box>
+        </MotionFlex>
+      </Grid>
+    </Box>
   )
 }
 
