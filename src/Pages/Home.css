@@ -103,12 +103,20 @@
 
 /* Classy Glassmorphism Utilities */
 .glass-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 16px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] .glass-card,
+.chakra-ui-dark .glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
 }
 
 .glass-card:hover {
@@ -120,7 +128,7 @@
 /* Primary Resume Button */
 .downloadbtn {
   background: linear-gradient(135deg, #f30e4f 0%, #d40840 100%);
-  color: #ffffff;
+  color: #ffffff !important;
   font-weight: 600;
   box-shadow: 0 6px 20px rgba(243, 14, 79, 0.4);
   transition: all 0.3s ease;
@@ -134,20 +142,34 @@
   background: linear-gradient(135deg, #ff1a5d 0%, #e00946 100%);
 }
 
-/* Secondary CTA Button */
+/* Secondary CTA Button (High contrast in daylight & night mode) */
 .secondary-btn {
-  border: 1px solid rgba(56, 189, 248, 0.5);
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(2, 132, 199, 0.6);
+  color: #0284c7;
+  background: rgba(2, 132, 199, 0.08);
   font-weight: 600;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .secondary-btn:hover {
+  background: rgba(2, 132, 199, 0.16);
+  border-color: #0284c7;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.25);
+}
+
+[data-theme="dark"] .secondary-btn,
+.chakra-ui-dark .secondary-btn {
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+}
+
+[data-theme="dark"] .secondary-btn:hover,
+.chakra-ui-dark .secondary-btn:hover {
   background: rgba(56, 189, 248, 0.16);
   border-color: #38bdf8;
-  transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(56, 189, 248, 0.3);
 }
 
@@ -159,6 +181,13 @@
 }
 
 .badge-cyan {
+  background: rgba(2, 132, 199, 0.1);
+  border: 1px solid rgba(2, 132, 199, 0.4);
+  color: #0284c7;
+}
+
+[data-theme="dark"] .badge-cyan,
+.chakra-ui-dark .badge-cyan {
   background: rgba(56, 189, 248, 0.12);
   border: 1px solid rgba(56, 189, 248, 0.4);
   color: #38bdf8;
@@ -167,12 +196,19 @@
 /* QA & Testing Executive Cards */
 .qa-card-refined {
   position: relative;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(243, 14, 79, 0.25);
   border-radius: 20px;
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] .qa-card-refined,
+.chakra-ui-dark .qa-card-refined {
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: none;
 }
 
 .qa-card-refined:hover {

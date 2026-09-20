@@ -77,7 +77,7 @@ function About() {
               </Flex>
               <Flex justify="space-between">
                 <Text color={isDark ? 'gray.400' : 'gray.500'} fontWeight={600}>Organization</Text>
-                <Text fontWeight={700} color="cyan.400">WPP Production India</Text>
+                <Text fontWeight={700} color={isDark ? 'cyan.400' : 'cyan.700'}>WPP Production India</Text>
               </Flex>
               <Flex justify="space-between">
                 <Text color={isDark ? 'gray.400' : 'gray.500'} fontWeight={600}>Domain</Text>

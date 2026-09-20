@@ -85,7 +85,7 @@ function Menus() {
             color: 'white',
           }}
         >
-          Download Resume (.docx)
+          Download Resume
         </MenuItem>
       </MenuList>
     </Menu>

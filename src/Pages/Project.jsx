@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Grid, Heading, Img, Link, Text, HStack } from '@chakra-ui/react'
+import { Box, Button, Flex, Grid, Heading, Img, Link, Text, HStack, useColorMode } from '@chakra-ui/react'
 import React from 'react'
 import { LinkIcon } from '@chakra-ui/icons'
 import { motion } from 'framer-motion'
@@ -11,6 +11,9 @@ const MotionBox = motion(Box);
 
 
 const Project = () => {
+  const { colorMode } = useColorMode();
+  const isDark = colorMode === 'dark';
+
   const caseStudies = [
     {
       id: 'qa-framework',
@@ -189,7 +192,7 @@ const Project = () => {
         <Heading fontSize={{ base: '32px', md: '44px' }} fontWeight={800} color="#f30e4f">
           Featured QA Work
         </Heading>
-        <Text fontSize={{ base: '14px', md: '16px' }} color="gray.400" maxW="700px" mx="auto" mt={2}>
+        <Text fontSize={{ base: '14px', md: '16px' }} color={isDark ? 'gray.400' : 'gray.600'} maxW="700px" mx="auto" mt={2}>
           Case studies from my QA leadership and automation engineering. Client names are withheld per confidentiality —
           highlights detail the compliance methodology, systems architecture, and business impact.
         </Text>
@@ -227,11 +230,11 @@ const Project = () => {
                 </span>
               </Flex>
 
-              <Heading fontSize={{ base: '19px', md: '21px' }} color="cyan.400" mb={3} fontWeight={700}>
+              <Heading fontSize={{ base: '19px', md: '21px' }} color={isDark ? 'cyan.400' : 'cyan.700'} mb={3} fontWeight={700}>
                 {cs.title}
               </Heading>
 
-              <Text fontSize={{ base: '14px', md: '15px' }} lineHeight="1.7" color="gray.300" mb={6} textAlign="justify">
+              <Text fontSize={{ base: '14px', md: '15px' }} lineHeight="1.7" color={isDark ? 'gray.300' : 'gray.700'} mb={6} textAlign="justify">
                 {cs.about}
               </Text>
             </Box>
@@ -254,15 +257,15 @@ const Project = () => {
                 justify="space-between"
                 pt={3}
                 borderTop="1px solid"
-                borderColor="rgba(255, 255, 255, 0.08)"
+                borderColor={isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.08)'}
                 fontSize="12px"
-                color="gray.400"
+                color={isDark ? 'gray.400' : 'gray.600'}
               >
                 <HStack spacing={1.5}>
                   <Text color="#10b981">✓</Text>
                   <Text fontWeight={600}>{idx === 0 ? 'Veeva Vault Audit-Ready' : 'Automated Defect Prevention'}</Text>
                 </HStack>
-                <Text fontSize="11px" color="cyan.300" fontWeight={600}>
+                <Text fontSize="11px" color={isDark ? 'cyan.300' : 'cyan.700'} fontWeight={600}>
                   {idx === 0 ? 'Zero Bug Track Record' : 'Internal Agency Tooling'}
                 </Text>
               </Flex>
@@ -279,7 +282,7 @@ const Project = () => {
         <Heading fontSize={{ base: '28px', md: '36px' }} fontWeight={800} color="#f30e4f">
           Full-Stack Projects
         </Heading>
-        <Text fontSize={{ base: '14px', md: '15px' }} color="gray.400" maxW="600px" mx="auto" mt={2}>
+        <Text fontSize={{ base: '14px', md: '15px' }} color={isDark ? 'gray.400' : 'gray.600'} maxW="600px" mx="auto" mt={2}>
           Full-stack development projects from my software engineering background (public repositories & live deployments).
         </Text>
       </Box>
@@ -300,7 +303,7 @@ const Project = () => {
               transform: 'translateY(-4px)',
             }}
           >
-            <Box overflow="hidden" borderRadius="xl" border="1px solid rgba(255,255,255,0.08)">
+            <Box overflow="hidden" borderRadius="xl" border={isDark ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(0,0,0,0.08)'}>
               <Img
                 src={project.src}
                 alt={project.title}
@@ -311,16 +314,16 @@ const Project = () => {
             </Box>
 
             <Box>
-              <Heading fontSize={{ base: '22px', md: '26px' }} color="cyan.400" mb={2}>
+              <Heading fontSize={{ base: '22px', md: '26px' }} color={isDark ? 'cyan.400' : 'cyan.700'} mb={2}>
                 {project.title}
               </Heading>
-              <Text fontSize={{ base: '14px', md: '15px' }} lineHeight="1.6" color="gray.300" mb={4}>
+              <Text fontSize={{ base: '14px', md: '15px' }} lineHeight="1.6" color={isDark ? 'gray.300' : 'gray.700'} mb={4}>
                 {project.about}
               </Text>
 
               {/* Tech Stack */}
               <Box mb={5}>
-                <Text fontSize="12px" fontWeight={700} color="gray.400" textTransform="uppercase" letterSpacing="wider" mb={2}>
+                <Text fontSize="12px" fontWeight={700} color={isDark ? 'gray.400' : 'gray.600'} textTransform="uppercase" letterSpacing="wider" mb={2}>
                   Tech Stack
                 </Text>
                 <Flex wrap="wrap" gap={1.5}>
@@ -332,12 +335,12 @@ const Project = () => {
                       px={2.5}
                       py={1}
                       borderRadius="full"
-                      bg="rgba(255,255,255,0.04)"
-                      border="1px solid rgba(255,255,255,0.1)"
+                      bg={isDark ? 'rgba(255,255,255,0.04)' : 'rgba(0,0,0,0.04)'}
+                      border={isDark ? '1px solid rgba(255,255,255,0.1)' : '1px solid rgba(0,0,0,0.1)'}
                       fontSize="12px"
                     >
                       <Img src={tech.img} w="16px" h="16px" objectFit="contain" />
-                      <Text color="gray.200">{tech.name}</Text>
+                      <Text color={isDark ? 'gray.200' : 'gray.800'}>{tech.name}</Text>
                     </Flex>
                   ))}
                 </Flex>
@@ -349,10 +352,12 @@ const Project = () => {
                   <Button
                     size="sm"
                     borderRadius="lg"
-                    bg="rgba(255, 255, 255, 0.08)"
-                    color="white"
-                    _hover={{ bg: 'rgba(255, 255, 255, 0.16)' }}
-                    leftIcon={<Img src="https://www.svgrepo.com/show/332084/github.svg" w={4} />}
+                    bg={isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.06)'}
+                    color={isDark ? 'white' : 'gray.800'}
+                    border="1px solid"
+                    borderColor={isDark ? 'rgba(255, 255, 255, 0.12)' : 'rgba(0, 0, 0, 0.12)'}
+                    _hover={{ bg: isDark ? 'rgba(255, 255, 255, 0.16)' : 'rgba(0, 0, 0, 0.12)' }}
+                    leftIcon={<Img src="https://www.svgrepo.com/show/332084/github.svg" w={4} filter={isDark ? 'invert(1)' : 'none'} />}
                   >
                     GitHub
                   </Button>

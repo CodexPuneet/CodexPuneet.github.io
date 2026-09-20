@@ -63,7 +63,7 @@ const QARoleCard = ({ title, account, badge, company, dates, summary, bullets, t
     <Heading fontSize={{ base: '19px', md: '23px' }} fontWeight={700} color={isDark ? 'white' : 'gray.900'} mb={1}>
       {title}
     </Heading>
-    <Text fontSize={{ base: '14px', md: '15px' }} color="cyan.400" fontWeight={600} mb={4}>
+    <Text fontSize={{ base: '14px', md: '15px' }} color={isDark ? 'cyan.400' : 'cyan.700'} fontWeight={600} mb={4}>
       {company}
     </Text>
 

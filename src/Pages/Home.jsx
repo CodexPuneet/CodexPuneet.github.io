@@ -131,7 +131,7 @@ const Home = () => {
               px={6}
               fontSize="15px"
             >
-              Download Resume (.docx)
+              Download Resume
             </Button>
 
             <Link activeClass="active" smooth spy offset={-70} to="experience">

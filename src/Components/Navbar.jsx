@@ -24,7 +24,7 @@ const NavBar = () => {
   ];
 
   return (
-    <Box pos="relative" zIndex={100}>
+    <Box pos="relative">
       <Box
         pos="fixed"
         top={0}
@@ -108,7 +108,7 @@ const NavBar = () => {
               className="downloadbtn"
               px={4}
             >
-              Resume (.docx)
+              Resume
             </Button>
           </HStack>
 
