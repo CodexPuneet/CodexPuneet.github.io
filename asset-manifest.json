@@ -1,15 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.747c3b94.css",
-    "main.js": "/static/js/main.fee390cd.js",
+    "main.css": "/static/css/main.1b93edf7.css",
+    "main.js": "/static/js/main.75d0bdc6.js",
     "static/media/JioMart.png": "/static/media/JioMart.dc925691941206beaa9a.png",
     "static/media/ShopQ.png": "/static/media/ShopQ.5a25b27f1a077125d570.png",
     "static/media/Nordstrom.png": "/static/media/Nordstrom.9bb57841ce868a246f32.png",
     "static/media/Mentimeter.png": "/static/media/Mentimeter.97627a47ab78de935141.png",
-    "static/media/wave.gif": "/static/media/wave.de53358cc619c6272683.gif",
     "static/media/image.jpg": "/static/media/image.ddfc04b9a77ab8e8ef83.jpg",
     "static/media/redux.png": "/static/media/redux.1b4bb5fceb01b19da59d.png",
-    "static/media/image2.jpg": "/static/media/image2.3595d52315f7a2636154.jpg",
+    "static/media/image2.jpg": "/static/media/image2.ee9acdd0b4e1b6aac669.jpg",
     "static/media/paymonk.png": "/static/media/paymonk.0d5facae0f8043b2fd65.png",
     "static/media/react.png": "/static/media/react.0cf951a69d8e58f83f9d.png",
     "static/media/node.png": "/static/media/node.952a9ea986dcfa5229ad.png",
@@ -26,12 +25,21 @@
     "static/media/chakra.png": "/static/media/chakra.36db97903e01c1040ed5.png",
     "static/media/javascript.png": "/static/media/javascript.1ccd6ef9bb1f9c84ef00.png",
     "static/media/angular.webp": "/static/media/angular.f18adb19d213ccfa91c2.webp",
+    "static/media/salesforce.svg": "/static/media/salesforce.e0f0647ed9125f3e09c10d47cf8e3f2d.svg",
+    "static/media/jira.svg": "/static/media/jira.61e3b26cf425a5d985a8d6e047a060c1.svg",
     "index.html": "/index.html",
-    "main.747c3b94.css.map": "/static/css/main.747c3b94.css.map",
-    "main.fee390cd.js.map": "/static/js/main.fee390cd.js.map"
+    "static/media/ewizard.svg": "/static/media/ewizard.85ca73ff2efd793fc2ad595db4e28730.svg",
+    "static/media/omnichannel.svg": "/static/media/omnichannel.76217e37b24c541a73b7c5440806b345.svg",
+    "static/media/oce.svg": "/static/media/oce.e11ecd24bb430aeada2719e25e5edad8.svg",
+    "static/media/compliance.svg": "/static/media/compliance.963eceab2ef1b2dd2e81b2025e8e4020.svg",
+    "static/media/viseven.svg": "/static/media/viseven.cc408c14183b466cad31d703fa5fd4ef.svg",
+    "static/media/veeva.svg": "/static/media/veeva.468549559283b14203c6052e1a2c80a6.svg",
+    "static/media/aem.svg": "/static/media/aem.57dad03ff87af2883c4e7c84de532d7f.svg",
+    "main.1b93edf7.css.map": "/static/css/main.1b93edf7.css.map",
+    "main.75d0bdc6.js.map": "/static/js/main.75d0bdc6.js.map"
   },
   "entrypoints": [
-    "static/css/main.747c3b94.css",
-    "static/js/main.fee390cd.js"
+    "static/css/main.1b93edf7.css",
+    "static/js/main.75d0bdc6.js"
   ]
 }
