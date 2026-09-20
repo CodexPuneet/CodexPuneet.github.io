@@ -1,5 +1,7 @@
 /**
- * Triggers simultaneous DOCX download and opens DOCX resume in a new tab.
+ * Triggers simultaneous DOCX download and opens the updated resume in a new browser tab.
+ * Note: Browsers cannot render .docx directly in a tab (it results in a blank tab and duplicate download).
+ * We open the updated resume PDF for in-browser viewing while downloading the DOCX file.
  */
 export const handleResumeClick = (e) => {
   if (e && e.preventDefault) {
@@ -14,6 +16,7 @@ export const handleResumeClick = (e) => {
   downloadLink.click();
   document.body.removeChild(downloadLink);
 
-  // 2. Open DOCX file in a new browser tab
-  window.open('./Puneet_Srivastava_Resume.docx', '_blank', 'noopener,noreferrer');
+  // 2. Open updated resume PDF in a new browser tab for viewing
+  window.open('./Puneet_Srivastava_Resume.pdf', '_blank', 'noopener,noreferrer');
 };
+
