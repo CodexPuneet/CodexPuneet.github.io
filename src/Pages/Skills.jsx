@@ -145,7 +145,20 @@ const Skills = () => {
         
       </div>
       <br></br>
-      <p mt='50px'>These are the technologies I've worked with</p>
+      <p mt='50px'>QA & Compliance tools I work with daily</p>
+      <div className="flex flex-wrap gap-3 py-6">
+        {['Veeva Vault', 'SFMC', 'Adobe Experience Manager (AEM)', 'Viseven', 'eWizard', 'OCE-D', 'OCE-P', 'Regulatory Compliance QA', 'Cross-Channel QA', 'Jira'].map((tool) => (
+          <span
+            key={tool}
+            className="px-4 py-2 rounded-full text-sm font-semibold"
+            style={{ background: 'rgba(243,14,79,0.12)', border: '1px solid rgba(243,14,79,0.5)', color: '#f30e4f' }}
+          >
+            {tool}
+          </span>
+        ))}
+      </div>
+
+      <p mt='50px'>Development technologies from my full-stack background</p>
 
       <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0">
         {techs.map(({ id, src, title, style }) => (

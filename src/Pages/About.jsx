@@ -16,7 +16,9 @@ function About() {
       <Box w={{base:'92%',md:'90%', lg:'80%'}} mt={{base:'40px',md:'50px'}}  ml={{base:'15px', md:'42px',lg:'150px'}} lineHeight={{base:'7',md:'10'}} >
       <Text fontSize={{base:15,md:17,lg:21}} textAlign={'justify'}  >
        
-      Hello Viewers! Happy to see You Guys Here. So, I am Electronics and Communication Engineer and am excited to enter the Teach World i.e IT Sector. The Journey from Hardware to Software has given me the ultimate experience of life. Now with the help of Masai School, I am an Energetic and passion-driven MERN Stack Developer having 1200+ hours of intensive Coding experience and able to write clean, reusable, and optimized code. Also, have a more profound knowledge of Data Structure Algorithms. I am looking for an opportunity to work in a challenging work environment to develop skills and a deeper understanding of Web development.
+      I'm a Senior QA Analyst functioning as QA Lead, specializing in cross-channel Quality Assurance for regulated pharmaceutical and diagnostics digital media campaigns. Over the past 3+ years I've progressed from QA Analyst to Senior QA to leading a team of ~12 QA resources — reviewing 430+ digital assets a month across 7+ channels (EDA, Email, Banner, Print, iPDF, AEM, Landing Pages) while sustaining zero escalations and zero external bugs for 12+ consecutive months. I currently lead the pilot onboarding of a new diagnostics account, building the QA compliance framework from the ground up.
+      <br/><br/>
+      Before moving into QA, I trained as a full-stack (MERN) developer through Masai School, building end-to-end products with React, Node.js, and MongoDB. That engineering background is why I don't just catch defects — I build systems that prevent them: I've designed and built three proprietary QA automation tools (Video QC, Banner QC, Email QC) and a centralized QA Hub for tracking, reporting, and KPI monitoring, cutting manual review time by an estimated 30%+. I'm currently exploring how AI can further strengthen QA workflows without compromising the rigor regulated environments demand.
        </Text>
       </Box>
     </Box> 

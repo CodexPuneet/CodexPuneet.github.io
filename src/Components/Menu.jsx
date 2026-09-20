@@ -51,6 +51,29 @@ function Menus() {
         </Link>
         
         <Link
+            activeClass="active"
+            to="experience"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+        >
+        <MenuItem
+          p={2}
+          fontWeight={600}
+          className=' hover:scale-110 font-signature '
+          _hover={{
+            borderRadius: "5px",
+            bg: "gray.100",
+            color: "#FF6347",
+            cursor: "pointer",
+          }}
+          mx={3}
+        >
+          Experience
+        </MenuItem>
+        </Link>
+        <Link
 
             activeClass="active"  
             to="skills"

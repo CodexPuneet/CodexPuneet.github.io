@@ -159,7 +159,8 @@ const Project = () => {
 
   return (
     <Box pt={{base:'10', md:'100'}} id='project'>
-      <Heading textAlign={'center'} paddingBottom={{base:'0', md:'20'}} style={{color:'rgb(243, 14, 79)'}}>My Projects</Heading>
+      <Heading textAlign={'center'} style={{color:'rgb(243, 14, 79)'}}>My Projects</Heading>
+      <Text textAlign={'center'} fontSize={{base:14, md:16}} opacity={0.8} mt={2} paddingBottom={{base:'0', md:'20'}}>Full-stack projects from my development background</Text>
       
     {
       portfolios.map((project,id)=>{

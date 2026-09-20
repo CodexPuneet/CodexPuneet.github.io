@@ -41,6 +41,7 @@ const NavBar = () => {
       <Flex mt={2} display={{base:"none", md:"block"}} >
       <IconButton  mr={18} p={{md:1, lg:7}} className=' hover:scale-110 duration-200 font-signature text-cyan-400' bg={'rgb(26,32,44)'} ><Link activeClass="active" smooth spy to="home">Home</Link></IconButton>
       <IconButton mr={18} p={{md:1, lg:8}} className=' hover:scale-110 duration-200 font-signature text-cyan-400'  bg={'rgb(26,32,44)'}><Link activeClass="active" smooth spy to="about">About Me</Link></IconButton>
+      <IconButton mr={18} p={{md:1, lg:8}} className=' hover:scale-110 duration-200 font-signature text-cyan-400'  bg={'rgb(26,32,44)'}><Link activeClass="active" smooth spy to="experience">Experience</Link></IconButton>
       <IconButton mr={18} p={{md:1, lg:8}} className=' hover:scale-110 duration-200 font-signature text-cyan-400' bg={'rgb(26,32,44)'} ><Link activeClass="active" smooth spy to="skills">Skills</Link></IconButton>
       <IconButton mr={18} p={{md:1, lg:8}} className=' hover:scale-110 duration-200 font-signature text-cyan-400'  bg={'rgb(26,32,44)'}><Link activeClass="active" smooth spy to="project">Project</Link></IconButton>
       <IconButton mr={18} p={{md:1, lg:8}} className=' hover:scale-110 duration-200 font-signature text-cyan-400'  bg={'rgb(26,32,44)'}><Link activeClass="active" smooth spy to="contact">Contact</Link></IconButton>

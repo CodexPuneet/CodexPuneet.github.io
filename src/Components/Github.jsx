@@ -11,7 +11,7 @@ function Github() {
       </Heading>
       <Grid  w={'80%'} m='40px auto'  >
         <Center>
-      <Img  p={5} src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=CodexPuneet&theme=2077" />
+      <Img  p={5} src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=CodexPuneet&theme=2077" />
       </Center>
       <GitHubCalendar 
       username="codexpuneet" 
@@ -24,7 +24,7 @@ function Github() {
       <Img p={5} src="https://github-readme-stats.vercel.app/api?username=CodexPuneet&show_icons=true&theme=radical" />
       </Center>
       <Center>
-      <Img p={5} src="https://github-readme-streak-stats.herokuapp.com/?user=CodexPuneet&theme=radical" />
+      <Img p={5} src="https://streak-stats.demolab.com/?user=CodexPuneet&theme=radical" />
       </Center>
       <Center>
       <Img  p={5} src="https://github-profile-trophy.vercel.app/?username=CodexPuneet&theme=radical" />
