@@ -16,7 +16,7 @@ export const handleResumeClick = (e) => {
   downloadLink.click();
   document.body.removeChild(downloadLink);
 
-  // 2. Open updated resume PDF in a new browser tab for viewing
-  window.open('./Puneet_Srivastava_Resume.pdf', '_blank', 'noopener,noreferrer');
+  // 2. Open beautifully styled resume page in a new browser tab
+  window.open('./resume.html', '_blank', 'noopener,noreferrer');
 };
 
