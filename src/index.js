@@ -12,10 +12,10 @@ const config = {
 
 const theme = extendTheme({ config });
 
-// Reset previous session's light mode cache so night mode is the default
-if (!localStorage.getItem('app-night-mode-v1')) {
+// Default to night mode (dark) on initial load
+if (!localStorage.getItem('app-night-mode-v2')) {
   localStorage.setItem('chakra-ui-color-mode', 'dark');
-  localStorage.setItem('app-night-mode-v1', 'true');
+  localStorage.setItem('app-night-mode-v2', 'true');
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

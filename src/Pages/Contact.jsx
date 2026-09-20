@@ -200,6 +200,15 @@ const Contact = () => {
                 size="lg"
                 borderRadius="xl"
                 className="downloadbtn"
+                bg="linear-gradient(135deg, #f30e4f 0%, #d40840 100%)"
+                color="white !important"
+                _hover={{
+                  bg: "linear-gradient(135deg, #ff1a5d 0%, #e00946 100%)",
+                  color: "white !important",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 10px 28px rgba(243, 14, 79, 0.6)",
+                }}
+                boxShadow="0 6px 20px rgba(243, 14, 79, 0.4)"
                 fontSize="15px"
                 mt={2}
               >

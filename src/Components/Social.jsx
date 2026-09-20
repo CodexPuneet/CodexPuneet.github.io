@@ -3,6 +3,7 @@ import { FaGithub, FaLinkedin, FaChevronRight, FaChevronLeft } from "react-icons
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { useColorMode, Box, IconButton } from "@chakra-ui/react";
+import { handleResumeClick } from "../utils/resume";
 
 const Social = () => {
   const { colorMode } = useColorMode();
@@ -116,6 +117,7 @@ const Social = () => {
                 download={download}
                 target={download ? undefined : "_blank"}
                 rel="noreferrer"
+                onClick={id === 4 ? handleResumeClick : undefined}
                 style={{
                   display: "flex",
                   justifyContent: "space-between",

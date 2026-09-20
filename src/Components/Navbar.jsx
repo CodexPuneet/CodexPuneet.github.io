@@ -8,6 +8,7 @@ import Project from '../Pages/Project';
 import Skills from '../Pages/Skills';
 import Experience from '../Pages/Experience'
 import Menu from './Menu';
+import { handleResumeClick } from '../utils/resume';
 
 const NavBar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -97,9 +98,7 @@ const NavBar = () => {
 
             {/* Resume Button */}
             <Button
-              as="a"
-              href="./Puneet_Srivastava_Resume.docx"
-              download="Puneet_Srivastava_Resume.docx"
+              onClick={handleResumeClick}
               size="sm"
               ml={3}
               borderRadius="full"
@@ -107,6 +106,15 @@ const NavBar = () => {
               fontWeight={600}
               className="downloadbtn"
               px={4}
+              bg="linear-gradient(135deg, #f30e4f 0%, #d40840 100%)"
+              color="white !important"
+              _hover={{
+                bg: "linear-gradient(135deg, #ff1a5d 0%, #e00946 100%)",
+                color: "white !important",
+                transform: "translateY(-2px)",
+                boxShadow: "0 10px 28px rgba(243, 14, 79, 0.6)",
+              }}
+              boxShadow="0 6px 20px rgba(243, 14, 79, 0.4)"
             >
               Resume
             </Button>

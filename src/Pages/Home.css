@@ -125,52 +125,72 @@
   transform: translateY(-3px);
 }
 
-/* Primary Resume Button */
+/* Primary Resume & Action Button */
+.chakra-button.downloadbtn,
+a.chakra-button.downloadbtn,
 .downloadbtn {
-  background: linear-gradient(135deg, #f30e4f 0%, #d40840 100%);
+  background: linear-gradient(135deg, #f30e4f 0%, #d40840 100%) !important;
   color: #ffffff !important;
-  font-weight: 600;
-  box-shadow: 0 6px 20px rgba(243, 14, 79, 0.4);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  border: none;
+  font-weight: 600 !important;
+  box-shadow: 0 6px 20px rgba(243, 14, 79, 0.4) !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+  border: none !important;
+  opacity: 1 !important;
 }
 
+.chakra-button.downloadbtn:hover,
+a.chakra-button.downloadbtn:hover,
 .downloadbtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(243, 14, 79, 0.6);
-  background: linear-gradient(135deg, #ff1a5d 0%, #e00946 100%);
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 28px rgba(243, 14, 79, 0.6) !important;
+  background: linear-gradient(135deg, #ff1a5d 0%, #e00946 100%) !important;
+  color: #ffffff !important;
 }
 
 /* Secondary CTA Button (High contrast in daylight & night mode) */
+.chakra-button.secondary-btn,
+a.chakra-button.secondary-btn,
 .secondary-btn {
-  border: 1px solid rgba(2, 132, 199, 0.6);
-  color: #0284c7;
-  background: rgba(2, 132, 199, 0.08);
-  font-weight: 600;
-  transition: all 0.3s ease;
-  cursor: pointer;
+  border: 1px solid rgba(2, 132, 199, 0.6) !important;
+  color: #0284c7 !important;
+  background: rgba(2, 132, 199, 0.08) !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
 }
 
+.chakra-button.secondary-btn:hover,
+a.chakra-button.secondary-btn:hover,
 .secondary-btn:hover {
-  background: rgba(2, 132, 199, 0.16);
-  border-color: #0284c7;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.25);
+  background: rgba(2, 132, 199, 0.16) !important;
+  border-color: #0284c7 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.25) !important;
+  color: #0284c7 !important;
 }
 
+[data-theme="dark"] .chakra-button.secondary-btn,
+[data-theme="dark"] a.chakra-button.secondary-btn,
 [data-theme="dark"] .secondary-btn,
+.chakra-ui-dark .chakra-button.secondary-btn,
+.chakra-ui-dark a.chakra-button.secondary-btn,
 .chakra-ui-dark .secondary-btn {
-  border: 1px solid rgba(56, 189, 248, 0.5);
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.5) !important;
+  color: #38bdf8 !important;
+  background: rgba(56, 189, 248, 0.08) !important;
 }
 
+[data-theme="dark"] .chakra-button.secondary-btn:hover,
+[data-theme="dark"] a.chakra-button.secondary-btn:hover,
 [data-theme="dark"] .secondary-btn:hover,
+.chakra-ui-dark .chakra-button.secondary-btn:hover,
+.chakra-ui-dark a.chakra-button.secondary-btn:hover,
 .chakra-ui-dark .secondary-btn:hover {
-  background: rgba(56, 189, 248, 0.16);
-  border-color: #38bdf8;
-  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.3);
+  background: rgba(56, 189, 248, 0.16) !important;
+  border-color: #38bdf8 !important;
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.3) !important;
+  color: #38bdf8 !important;
 }
 
 /* Executive Accent Badges */

@@ -5,7 +5,8 @@ import { DownloadIcon, ArrowForwardIcon } from '@chakra-ui/icons';
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 import Pic from '../Images/image.jpg';
-import './Home.css'
+import './Home.css';
+import { handleResumeClick } from '../utils/resume';
 
 const MotionBox = motion(Box);
 const MotionFlex = motion(Flex);
@@ -121,15 +122,22 @@ const Home = () => {
           {/* Action CTAs */}
           <Flex wrap="wrap" gap={4} mt={6} alignItems="center">
             <Button
-              as="a"
-              href="./Puneet_Srivastava_Resume.docx"
-              download="Puneet_Srivastava_Resume.docx"
+              onClick={handleResumeClick}
               leftIcon={<DownloadIcon />}
               className="downloadbtn"
               size="lg"
               borderRadius="xl"
               px={6}
               fontSize="15px"
+              bg="linear-gradient(135deg, #f30e4f 0%, #d40840 100%)"
+              color="white !important"
+              _hover={{
+                bg: "linear-gradient(135deg, #ff1a5d 0%, #e00946 100%)",
+                color: "white !important",
+                transform: "translateY(-2px)",
+                boxShadow: "0 10px 28px rgba(243, 14, 79, 0.6)",
+              }}
+              boxShadow="0 6px 20px rgba(243, 14, 79, 0.4)"
             >
               Download Resume
             </Button>
@@ -142,6 +150,16 @@ const Home = () => {
                 borderRadius="xl"
                 px={6}
                 fontSize="15px"
+                color={isDark ? "#38bdf8 !important" : "#0284c7 !important"}
+                bg={isDark ? "rgba(56, 189, 248, 0.08)" : "rgba(2, 132, 199, 0.08)"}
+                border="1px solid"
+                borderColor={isDark ? "rgba(56, 189, 248, 0.5)" : "rgba(2, 132, 199, 0.6)"}
+                _hover={{
+                  bg: isDark ? "rgba(56, 189, 248, 0.16)" : "rgba(2, 132, 199, 0.16)",
+                  borderColor: isDark ? "#38bdf8" : "#0284c7",
+                  transform: "translateY(-2px)",
+                  boxShadow: isDark ? "0 8px 24px rgba(56, 189, 248, 0.3)" : "0 8px 24px rgba(2, 132, 199, 0.25)",
+                }}
               >
                 View Experience
               </Button>

@@ -2,6 +2,7 @@ import { Menu, MenuButton, MenuList, MenuItem, IconButton, useColorMode } from '
 import React from 'react'
 import { FaBars } from 'react-icons/fa';
 import { Link } from 'react-scroll'
+import { handleResumeClick } from '../utils/resume'
 
 function Menus() {
   const { colorMode } = useColorMode();
@@ -69,9 +70,7 @@ function Menus() {
         ))}
 
         <MenuItem
-          as="a"
-          href="./Puneet_Srivastava_Resume.docx"
-          download="Puneet_Srivastava_Resume.docx"
+          onClick={handleResumeClick}
           borderRadius="md"
           px={4}
           py={2.5}
