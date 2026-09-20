@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.4f870e5c.css",
-    "main.js": "/static/js/main.a604bf3f.js",
+    "main.js": "/static/js/main.a404a83f.js",
     "static/media/JioMart.png": "/static/media/JioMart.dc925691941206beaa9a.png",
     "static/media/ShopQ.png": "/static/media/ShopQ.5a25b27f1a077125d570.png",
     "static/media/Nordstrom.png": "/static/media/Nordstrom.9bb57841ce868a246f32.png",
@@ -36,10 +36,10 @@
     "static/media/veeva.svg": "/static/media/veeva.468549559283b14203c6052e1a2c80a6.svg",
     "static/media/aem.svg": "/static/media/aem.57dad03ff87af2883c4e7c84de532d7f.svg",
     "main.4f870e5c.css.map": "/static/css/main.4f870e5c.css.map",
-    "main.a604bf3f.js.map": "/static/js/main.a604bf3f.js.map"
+    "main.a404a83f.js.map": "/static/js/main.a404a83f.js.map"
   },
   "entrypoints": [
     "static/css/main.4f870e5c.css",
-    "static/js/main.a604bf3f.js"
+    "static/js/main.a404a83f.js"
   ]
 }
