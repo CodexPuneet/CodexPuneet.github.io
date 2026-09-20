@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex, Grid, Heading, Text, VStack, HStack, Badge, useColorMode } from '@chakra-ui/react'
+import { Box, Flex, Grid, Heading, Text, VStack, Badge, useColorMode } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import Pic from '../Images/image2.jpg';
 
@@ -133,7 +133,7 @@ function About() {
           </Box>
 
           {/* Two Pillars Grid */}
-          <Grid templateColumns={{ base: '1fr', sm: '1fr 1fr' }} gap={4}>
+          <Grid templateColumns={{ base: '1fr', sm: '1fr 1fr' }} gap={{ base: 4, md: 6 }}>
             {pillars.map((p, i) => (
               <Box
                 key={i}
@@ -150,20 +150,22 @@ function About() {
                 <Text fontSize="13px" lineHeight="1.6" color={isDark ? 'gray.400' : 'gray.600'} mb={4}>
                   {p.description}
                 </Text>
-                <HStack wrap="wrap" spacing={1.5}>
+                <Flex wrap="wrap" gap={2.5} mt={2}>
                   {p.tags.map((t, idx) => (
                     <Badge
                       key={idx}
-                      fontSize="10px"
-                      px={2}
-                      py={0.5}
+                      fontSize="11px"
+                      fontWeight={600}
+                      px={3}
+                      py={1}
                       borderRadius="md"
                       className="badge-accent"
+                      letterSpacing="wide"
                     >
                       {t}
                     </Badge>
                   ))}
-                </HStack>
+                </Flex>
               </Box>
             ))}
           </Grid>
