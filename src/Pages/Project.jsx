@@ -199,37 +199,30 @@ const Project = () => {
         {caseStudies.map((cs, idx) => (
           <MotionBox
             key={cs.id}
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: idx * 0.15 }}
+            transition={{ duration: 0.5, delay: idx * 0.12 }}
             p={{ base: 6, md: 8 }}
             borderRadius="2xl"
-            className="glass-card qa-card-animated"
-            border="1px solid"
-            borderColor="rgba(243, 14, 79, 0.3)"
+            className="qa-card-refined"
             position="relative"
             display="flex"
             flexDirection="column"
             justifyContent="space-between"
           >
-            {/* Animated QA Scanner Laser Beam */}
-            <Box className="qa-scan-line" />
-
             <Box>
-              {/* Header Telemetry Row */}
+              {/* Header Row */}
               <Flex justify="space-between" align="center" mb={4}>
                 <Flex align="center" gap={3}>
                   <Text fontSize="34px">{cs.icon}</Text>
-                  <HStack spacing={2} px={2.5} py={1} borderRadius="full" bg="rgba(16, 185, 129, 0.1)" border="1px solid rgba(16, 185, 129, 0.3)">
-                    <span className="qa-radar-pulse" />
-                    <Text fontSize="11px" fontWeight={700} color="#10b981" letterSpacing="wider">
-                      ACTIVE IN PROD
-                    </Text>
-                  </HStack>
+                  <span className="qa-status-pill">
+                    <span className="qa-status-dot" />
+                    PRODUCTION VERIFIED
+                  </span>
                 </Flex>
 
-                <span className="qa-metric-badge px-3 py-1 rounded-full text-xs font-bold text-white">
+                <span className="badge-accent px-3 py-1 rounded-full text-xs font-bold">
                   {cs.metric}
                 </span>
               </Flex>
@@ -243,7 +236,7 @@ const Project = () => {
               </Text>
             </Box>
 
-            {/* Tags & Validation Checklist */}
+            {/* Tags & Summary */}
             <Box>
               <Flex wrap="wrap" gap={2} mb={4}>
                 {cs.tags.map((tag, i) => (
@@ -256,7 +249,6 @@ const Project = () => {
                 ))}
               </Flex>
 
-              {/* Automated QA Checklist Pill */}
               <Flex
                 align="center"
                 justify="space-between"
@@ -268,10 +260,10 @@ const Project = () => {
               >
                 <HStack spacing={1.5}>
                   <Text color="#10b981">✓</Text>
-                  <Text fontWeight={600}>{idx === 0 ? 'Veeva Vault Audit-Ready' : 'Real-time Defect Prevention'}</Text>
+                  <Text fontWeight={600}>{idx === 0 ? 'Veeva Vault Audit-Ready' : 'Automated Defect Prevention'}</Text>
                 </HStack>
                 <Text fontSize="11px" color="cyan.300" fontWeight={600}>
-                  {idx === 0 ? '100% Pass Rate' : 'Automated QC Flow'}
+                  {idx === 0 ? 'Zero Bug Track Record' : 'Internal Agency Tooling'}
                 </Text>
               </Flex>
             </Box>
