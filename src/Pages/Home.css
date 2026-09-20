@@ -28,19 +28,20 @@
 }
 
 .profile1 {
-  width: 280px;
-  height: 330px;
+  width: 290px;
+  height: 360px;
   object-fit: cover;
-  border-radius: 20px;
-  border: 1px solid rgba(243, 14, 79, 0.4);
-  box-shadow: 0 15px 35px -10px rgba(243, 14, 79, 0.3);
-  transition: all 0.3s ease;
+  object-position: center top;
+  border-radius: 22px;
+  border: 2px solid rgba(243, 14, 79, 0.45);
+  box-shadow: 0 16px 40px -10px rgba(243, 14, 79, 0.3), 0 0 25px rgba(56, 189, 248, 0.15);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .profile1:hover {
-  transform: translateY(-4px);
-  border-color: #38bdf8;
-  box-shadow: 0 20px 40px -10px rgba(56, 189, 248, 0.3);
+  transform: translateY(-4px) scale(1.015);
+  border-color: rgba(56, 189, 248, 0.7);
+  box-shadow: 0 22px 48px -8px rgba(56, 189, 248, 0.35), 0 0 30px rgba(243, 14, 79, 0.25);
 }
 
 .paymonk {
