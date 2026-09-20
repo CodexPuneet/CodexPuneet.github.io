@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ee29c303.css",
-    "main.js": "/static/js/main.48690146.js",
+    "main.css": "/static/css/main.4f870e5c.css",
+    "main.js": "/static/js/main.a604bf3f.js",
     "static/media/JioMart.png": "/static/media/JioMart.dc925691941206beaa9a.png",
     "static/media/ShopQ.png": "/static/media/ShopQ.5a25b27f1a077125d570.png",
     "static/media/Nordstrom.png": "/static/media/Nordstrom.9bb57841ce868a246f32.png",
@@ -35,11 +35,11 @@
     "static/media/viseven.svg": "/static/media/viseven.cc408c14183b466cad31d703fa5fd4ef.svg",
     "static/media/veeva.svg": "/static/media/veeva.468549559283b14203c6052e1a2c80a6.svg",
     "static/media/aem.svg": "/static/media/aem.57dad03ff87af2883c4e7c84de532d7f.svg",
-    "main.ee29c303.css.map": "/static/css/main.ee29c303.css.map",
-    "main.48690146.js.map": "/static/js/main.48690146.js.map"
+    "main.4f870e5c.css.map": "/static/css/main.4f870e5c.css.map",
+    "main.a604bf3f.js.map": "/static/js/main.a604bf3f.js.map"
   },
   "entrypoints": [
-    "static/css/main.ee29c303.css",
-    "static/js/main.48690146.js"
+    "static/css/main.4f870e5c.css",
+    "static/js/main.a604bf3f.js"
   ]
 }
